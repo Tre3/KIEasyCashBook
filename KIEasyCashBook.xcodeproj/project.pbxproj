@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F2341A4C1A5EA62500DCD144 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A4B1A5EA62500DCD144 /* main.m */; };
+		F2341A4F1A5EA62500DCD144 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A4E1A5EA62500DCD144 /* AppDelegate.m */; };
+		F2341A521A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F2341A501A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld */; };
+		F2341A551A5EA62500DCD144 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A541A5EA62500DCD144 /* MainViewController.m */; };
+		F2341A581A5EA62500DCD144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2341A561A5EA62500DCD144 /* Main.storyboard */; };
+		F2341A5A1A5EA62500DCD144 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2341A591A5EA62500DCD144 /* Images.xcassets */; };
+		F2341A5D1A5EA62500DCD144 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2341A5B1A5EA62500DCD144 /* LaunchScreen.xib */; };
+		F2341A691A5EA62500DCD144 /* KIEasyCashBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A681A5EA62500DCD144 /* KIEasyCashBookTests.m */; };
+		F2341A741A5EE9B300DCD144 /* AddBalanceListModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */; };
+		F2341A771A5EEBEB00DCD144 /* BalaneListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A761A5EEBEB00DCD144 /* BalaneListDetailViewController.m */; };
+		F2341A7A1A5EF3D200DCD144 /* AddBalanceListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2341A631A5EA62500DCD144 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2341A3E1A5EA62500DCD144 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2341A451A5EA62500DCD144;
+			remoteInfo = KIEasyCashBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F2341A461A5EA62500DCD144 /* KIEasyCashBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KIEasyCashBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2341A4A1A5EA62500DCD144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2341A4B1A5EA62500DCD144 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F2341A4D1A5EA62500DCD144 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F2341A4E1A5EA62500DCD144 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F2341A511A5EA62500DCD144 /* KIEasyCashBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KIEasyCashBook.xcdatamodel; sourceTree = "<group>"; };
+		F2341A531A5EA62500DCD144 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F2341A541A5EA62500DCD144 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F2341A571A5EA62500DCD144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2341A591A5EA62500DCD144 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F2341A5C1A5EA62500DCD144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F2341A621A5EA62500DCD144 /* KIEasyCashBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KIEasyCashBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2341A671A5EA62500DCD144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2341A681A5EA62500DCD144 /* KIEasyCashBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIEasyCashBookTests.m; sourceTree = "<group>"; };
+		F2341A721A5EE9B300DCD144 /* AddBalanceListModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBalanceListModalViewController.h; sourceTree = "<group>"; };
+		F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBalanceListModalViewController.m; sourceTree = "<group>"; };
+		F2341A751A5EEBEB00DCD144 /* BalaneListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalaneListDetailViewController.h; sourceTree = "<group>"; };
+		F2341A761A5EEBEB00DCD144 /* BalaneListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalaneListDetailViewController.m; sourceTree = "<group>"; };
+		F2341A781A5EF3D200DCD144 /* AddBalanceListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBalanceListDetailViewController.h; sourceTree = "<group>"; };
+		F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBalanceListDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2341A431A5EA62500DCD144 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2341A5F1A5EA62500DCD144 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2341A3D1A5EA62500DCD144 = {
+			isa = PBXGroup;
+			children = (
+				F2341A481A5EA62500DCD144 /* KIEasyCashBook */,
+				F2341A651A5EA62500DCD144 /* KIEasyCashBookTests */,
+				F2341A471A5EA62500DCD144 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2341A471A5EA62500DCD144 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A461A5EA62500DCD144 /* KIEasyCashBook.app */,
+				F2341A621A5EA62500DCD144 /* KIEasyCashBookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2341A481A5EA62500DCD144 /* KIEasyCashBook */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A4D1A5EA62500DCD144 /* AppDelegate.h */,
+				F2341A4E1A5EA62500DCD144 /* AppDelegate.m */,
+				F2341A531A5EA62500DCD144 /* MainViewController.h */,
+				F2341A541A5EA62500DCD144 /* MainViewController.m */,
+				F2341A561A5EA62500DCD144 /* Main.storyboard */,
+				F2341A591A5EA62500DCD144 /* Images.xcassets */,
+				F2341A5B1A5EA62500DCD144 /* LaunchScreen.xib */,
+				F2341A501A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld */,
+				F2341A491A5EA62500DCD144 /* Supporting Files */,
+				F2341A721A5EE9B300DCD144 /* AddBalanceListModalViewController.h */,
+				F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */,
+				F2341A751A5EEBEB00DCD144 /* BalaneListDetailViewController.h */,
+				F2341A761A5EEBEB00DCD144 /* BalaneListDetailViewController.m */,
+				F2341A781A5EF3D200DCD144 /* AddBalanceListDetailViewController.h */,
+				F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */,
+			);
+			path = KIEasyCashBook;
+			sourceTree = "<group>";
+		};
+		F2341A491A5EA62500DCD144 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A4A1A5EA62500DCD144 /* Info.plist */,
+				F2341A4B1A5EA62500DCD144 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2341A651A5EA62500DCD144 /* KIEasyCashBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A681A5EA62500DCD144 /* KIEasyCashBookTests.m */,
+				F2341A661A5EA62500DCD144 /* Supporting Files */,
+			);
+			path = KIEasyCashBookTests;
+			sourceTree = "<group>";
+		};
+		F2341A661A5EA62500DCD144 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A671A5EA62500DCD144 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2341A451A5EA62500DCD144 /* KIEasyCashBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2341A6C1A5EA62500DCD144 /* Build configuration list for PBXNativeTarget "KIEasyCashBook" */;
+			buildPhases = (
+				F2341A421A5EA62500DCD144 /* Sources */,
+				F2341A431A5EA62500DCD144 /* Frameworks */,
+				F2341A441A5EA62500DCD144 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KIEasyCashBook;
+			productName = KIEasyCashBook;
+			productReference = F2341A461A5EA62500DCD144 /* KIEasyCashBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F2341A611A5EA62500DCD144 /* KIEasyCashBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2341A6F1A5EA62500DCD144 /* Build configuration list for PBXNativeTarget "KIEasyCashBookTests" */;
+			buildPhases = (
+				F2341A5E1A5EA62500DCD144 /* Sources */,
+				F2341A5F1A5EA62500DCD144 /* Frameworks */,
+				F2341A601A5EA62500DCD144 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2341A641A5EA62500DCD144 /* PBXTargetDependency */,
+			);
+			name = KIEasyCashBookTests;
+			productName = KIEasyCashBookTests;
+			productReference = F2341A621A5EA62500DCD144 /* KIEasyCashBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2341A3E1A5EA62500DCD144 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "今井啓輔";
+				TargetAttributes = {
+					F2341A451A5EA62500DCD144 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					F2341A611A5EA62500DCD144 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = F2341A451A5EA62500DCD144;
+					};
+				};
+			};
+			buildConfigurationList = F2341A411A5EA62500DCD144 /* Build configuration list for PBXProject "KIEasyCashBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2341A3D1A5EA62500DCD144;
+			productRefGroup = F2341A471A5EA62500DCD144 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2341A451A5EA62500DCD144 /* KIEasyCashBook */,
+				F2341A611A5EA62500DCD144 /* KIEasyCashBookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2341A441A5EA62500DCD144 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2341A581A5EA62500DCD144 /* Main.storyboard in Resources */,
+				F2341A5D1A5EA62500DCD144 /* LaunchScreen.xib in Resources */,
+				F2341A5A1A5EA62500DCD144 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2341A601A5EA62500DCD144 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2341A421A5EA62500DCD144 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2341A741A5EE9B300DCD144 /* AddBalanceListModalViewController.m in Sources */,
+				F2341A4F1A5EA62500DCD144 /* AppDelegate.m in Sources */,
+				F2341A521A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld in Sources */,
+				F2341A551A5EA62500DCD144 /* MainViewController.m in Sources */,
+				F2341A771A5EEBEB00DCD144 /* BalaneListDetailViewController.m in Sources */,
+				F2341A7A1A5EF3D200DCD144 /* AddBalanceListDetailViewController.m in Sources */,
+				F2341A4C1A5EA62500DCD144 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2341A5E1A5EA62500DCD144 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2341A691A5EA62500DCD144 /* KIEasyCashBookTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2341A641A5EA62500DCD144 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2341A451A5EA62500DCD144 /* KIEasyCashBook */;
+			targetProxy = F2341A631A5EA62500DCD144 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F2341A561A5EA62500DCD144 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2341A571A5EA62500DCD144 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F2341A5B1A5EA62500DCD144 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2341A5C1A5EA62500DCD144 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2341A6A1A5EA62500DCD144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F2341A6B1A5EA62500DCD144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2341A6D1A5EA62500DCD144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KIEasyCashBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F2341A6E1A5EA62500DCD144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KIEasyCashBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F2341A701A5EA62500DCD144 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KIEasyCashBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KIEasyCashBook.app/KIEasyCashBook";
+			};
+			name = Debug;
+		};
+		F2341A711A5EA62500DCD144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KIEasyCashBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KIEasyCashBook.app/KIEasyCashBook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2341A411A5EA62500DCD144 /* Build configuration list for PBXProject "KIEasyCashBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2341A6A1A5EA62500DCD144 /* Debug */,
+				F2341A6B1A5EA62500DCD144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2341A6C1A5EA62500DCD144 /* Build configuration list for PBXNativeTarget "KIEasyCashBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2341A6D1A5EA62500DCD144 /* Debug */,
+				F2341A6E1A5EA62500DCD144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F2341A6F1A5EA62500DCD144 /* Build configuration list for PBXNativeTarget "KIEasyCashBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2341A701A5EA62500DCD144 /* Debug */,
+				F2341A711A5EA62500DCD144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F2341A501A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F2341A511A5EA62500DCD144 /* KIEasyCashBook.xcdatamodel */,
+			);
+			currentVersion = F2341A511A5EA62500DCD144 /* KIEasyCashBook.xcdatamodel */;
+			path = KIEasyCashBook.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F2341A3E1A5EA62500DCD144 /* Project object */;
+}
