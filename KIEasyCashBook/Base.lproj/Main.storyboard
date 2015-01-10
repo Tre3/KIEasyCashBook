@@ -376,6 +376,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="plusOrMinusPickerView" destination="krM-sP-1fq" id="kgr-Bt-lAU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pky-dg-eEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="C8y-LR-thx" userLabel="Exit" sceneMemberID="exit"/>
