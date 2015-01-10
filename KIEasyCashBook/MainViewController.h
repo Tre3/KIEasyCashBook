@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
+{
+    NSString *tableName;
+}
+@property NSString *tableName;
 
 @end
 

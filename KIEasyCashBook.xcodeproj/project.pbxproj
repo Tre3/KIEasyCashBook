@@ -16,7 +16,7 @@
 		F2341A5D1A5EA62500DCD144 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2341A5B1A5EA62500DCD144 /* LaunchScreen.xib */; };
 		F2341A691A5EA62500DCD144 /* KIEasyCashBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A681A5EA62500DCD144 /* KIEasyCashBookTests.m */; };
 		F2341A741A5EE9B300DCD144 /* AddBalanceListModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */; };
-		F2341A771A5EEBEB00DCD144 /* BalaneListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A761A5EEBEB00DCD144 /* BalaneListDetailViewController.m */; };
+		F2341A771A5EEBEB00DCD144 /* BalanceListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A761A5EEBEB00DCD144 /* BalanceListDetailViewController.m */; };
 		F2341A7A1A5EF3D200DCD144 /* AddBalanceListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +47,8 @@
 		F2341A681A5EA62500DCD144 /* KIEasyCashBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KIEasyCashBookTests.m; sourceTree = "<group>"; };
 		F2341A721A5EE9B300DCD144 /* AddBalanceListModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBalanceListModalViewController.h; sourceTree = "<group>"; };
 		F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBalanceListModalViewController.m; sourceTree = "<group>"; };
-		F2341A751A5EEBEB00DCD144 /* BalaneListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalaneListDetailViewController.h; sourceTree = "<group>"; };
-		F2341A761A5EEBEB00DCD144 /* BalaneListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalaneListDetailViewController.m; sourceTree = "<group>"; };
+		F2341A751A5EEBEB00DCD144 /* BalanceListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceListDetailViewController.h; sourceTree = "<group>"; };
+		F2341A761A5EEBEB00DCD144 /* BalanceListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceListDetailViewController.m; sourceTree = "<group>"; };
 		F2341A781A5EF3D200DCD144 /* AddBalanceListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBalanceListDetailViewController.h; sourceTree = "<group>"; };
 		F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBalanceListDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,8 +103,8 @@
 				F2341A491A5EA62500DCD144 /* Supporting Files */,
 				F2341A721A5EE9B300DCD144 /* AddBalanceListModalViewController.h */,
 				F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */,
-				F2341A751A5EEBEB00DCD144 /* BalaneListDetailViewController.h */,
-				F2341A761A5EEBEB00DCD144 /* BalaneListDetailViewController.m */,
+				F2341A751A5EEBEB00DCD144 /* BalanceListDetailViewController.h */,
+				F2341A761A5EEBEB00DCD144 /* BalanceListDetailViewController.m */,
 				F2341A781A5EF3D200DCD144 /* AddBalanceListDetailViewController.h */,
 				F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */,
 			);
@@ -241,7 +241,7 @@
 				F2341A4F1A5EA62500DCD144 /* AppDelegate.m in Sources */,
 				F2341A521A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld in Sources */,
 				F2341A551A5EA62500DCD144 /* MainViewController.m in Sources */,
-				F2341A771A5EEBEB00DCD144 /* BalaneListDetailViewController.m in Sources */,
+				F2341A771A5EEBEB00DCD144 /* BalanceListDetailViewController.m in Sources */,
 				F2341A7A1A5EF3D200DCD144 /* AddBalanceListDetailViewController.m in Sources */,
 				F2341A4C1A5EA62500DCD144 /* main.m in Sources */,
 			);
@@ -434,6 +434,7 @@
 				F2341A6E1A5EA62500DCD144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2341A6F1A5EA62500DCD144 /* Build configuration list for PBXNativeTarget "KIEasyCashBookTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +443,7 @@
 				F2341A711A5EA62500DCD144 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

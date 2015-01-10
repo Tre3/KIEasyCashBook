@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BalaneListDetailViewController : UIViewController
+@interface BalanceListDetailViewController : UIViewController
+{
+    NSString *tableName;
+}
 
+@property NSString *tableName;
 @end

@@ -6,17 +6,21 @@
 //  Copyright (c) 2015年 今井啓輔. All rights reserved.
 //
 
-#import "BalaneListDetailViewController.h"
+#import "BalanceListDetailViewController.h"
 
-@interface BalaneListDetailViewController ()
+@interface BalanceListDetailViewController ()
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @end
 
-@implementation BalaneListDetailViewController
+@implementation BalanceListDetailViewController
+@synthesize tableName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationBar.topItem.title = tableName;
 }
 
 - (void)didReceiveMemoryWarning {

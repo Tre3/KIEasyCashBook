@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "BalanceListDetailViewController.h"
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *tableEditButton;
@@ -17,6 +18,7 @@
 @end
 
 @implementation MainViewController
+@synthesize tableName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,8 +55,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath*) indexPath{
+    tableName = self.dataSource[indexPath.row];
     
     [self performSegueWithIdentifier:@"toBalanceListDetailSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //2つ目の画面にパラメータを渡して遷移する
+    if ([segue.identifier isEqualToString:@"toBalanceListDetailSegue"]) {
+        //ここでパラメータを渡す
+        BalanceListDetailViewController *balanceListDetailViewController = segue.destinationViewController;
+        balanceListDetailViewController.tableName = tableName;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
