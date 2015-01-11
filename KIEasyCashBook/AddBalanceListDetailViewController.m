@@ -39,7 +39,7 @@
 
 // 行数を返す例　*必須
 - (NSInteger) pickerView: (UIPickerView*)pView numberOfRowsInComponent:(NSInteger) component {
-    int cnt = [plusOrMinusArray count];
+    NSInteger cnt = [plusOrMinusArray count];
     return cnt;
 }
 
@@ -55,7 +55,7 @@
 {
     //0列目の選択している行番号を取得
     NSInteger selectedRow = [pickerView selectedRowInComponent:0];
-    NSLog(@"%d", selectedRow);
+    NSLog(@"%ld", (long)selectedRow);
 }
 
 /*
