@@ -8,12 +8,13 @@
 
 #import "MainViewController.h"
 #import "BalanceListDetailViewController.h"
+#import "AddBalanceListModalViewController.h"
 
-@interface MainViewController ()
+@interface MainViewController () {
+    NSMutableArray *balanceLists;
+}
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *tableEditButton;
 @property (weak, nonatomic) IBOutlet UITableView *balanceListSummary;
-
-@property (nonatomic, strong) NSArray *dataSource;
 
 @end
 
@@ -25,8 +26,6 @@
     
     self.balanceListSummary.delegate = self;
     self.balanceListSummary.dataSource = self;
-    
-    self.dataSource = @[@"a",@"b",@"c"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +35,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataSource.count;
+    return balanceLists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,14 +47,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = self.dataSource[indexPath.row];
-    cell.detailTextLabel.text = self.dataSource[indexPath.row];
+    cell.textLabel.text = balanceLists[indexPath.row];
+    cell.detailTextLabel.text = balanceLists[indexPath.row];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath*) indexPath{
-    tableName = self.dataSource[indexPath.row];
+    tableName = balanceLists[indexPath.row];
     
     [self performSegueWithIdentifier:@"toBalanceListDetailSegue" sender:self];
 }
@@ -84,9 +83,21 @@
     }
 }
 
--(IBAction)unwindToMaster:(UIStoryboardSegue *)segue
+-(void) insertNewList:(id)sender
 {
-    
+    if (!balanceLists) {
+        balanceLists = [[NSMutableArray alloc] init];
+    }
+    [balanceLists insertObject:sender atIndex:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.balanceListSummary insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+-(IBAction)unwindToMaster:(UIStoryboardSegue *)segue
+{
+    if ([segue.identifier isEqualToString:@"save"]) {
+        AddBalanceListModalViewController *addBalanceListModalViewController = (AddBalanceListModalViewController *)segue.sourceViewController;
+        [self insertNewList:addBalanceListModalViewController.addBalanceListTextField.text];
+    }
+}
 @end

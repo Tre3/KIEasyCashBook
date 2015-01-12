@@ -403,10 +403,14 @@
                                     <navigationItem title="新規追加" id="eMu-g3-DIG">
                                         <barButtonItem key="leftBarButtonItem" title="キャンセル" id="tEs-Ii-Sb4">
                                             <connections>
-                                                <segue destination="JR1-gh-1UG" kind="unwind" unwindAction="unwindToMaster:" id="rt2-ml-38T"/>
+                                                <segue destination="JR1-gh-1UG" kind="unwind" identifier="cancel" unwindAction="unwindToMaster:" id="ffE-8k-i7o"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="保存" id="Bsl-MP-P5X"/>
+                                        <barButtonItem key="rightBarButtonItem" title="保存" id="Bsl-MP-P5X">
+                                            <connections>
+                                                <segue destination="JR1-gh-1UG" kind="unwind" identifier="save" unwindAction="unwindToMaster:" id="eW8-OG-k9m"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -490,6 +494,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="addBalanceListTextField" destination="dqv-36-XAI" id="HbX-Lb-UnX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TW-Wi-OAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JR1-gh-1UG" userLabel="Exit" sceneMemberID="exit"/>

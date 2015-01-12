@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddBalanceListModalViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITextField *addBalanceListTextField;
 @end
