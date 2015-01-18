@@ -18,6 +18,7 @@
 		F2341A741A5EE9B300DCD144 /* AddBalanceListModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */; };
 		F2341A771A5EEBEB00DCD144 /* BalanceListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A761A5EEBEB00DCD144 /* BalanceListDetailViewController.m */; };
 		F2341A7A1A5EF3D200DCD144 /* AddBalanceListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */; };
+		F2AE272F1A6C0C7F00772D08 /* MoneyTableDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F2AE272E1A6C0C7F00772D08 /* MoneyTableDataManager.m */; };
 		F2B382471A6BB5E700EE9618 /* MoneyTable.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B382461A6BB5E700EE9618 /* MoneyTable.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		F2341A761A5EEBEB00DCD144 /* BalanceListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceListDetailViewController.m; sourceTree = "<group>"; };
 		F2341A781A5EF3D200DCD144 /* AddBalanceListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBalanceListDetailViewController.h; sourceTree = "<group>"; };
 		F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBalanceListDetailViewController.m; sourceTree = "<group>"; };
+		F2AE272D1A6C0C7F00772D08 /* MoneyTableDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTableDataManager.h; sourceTree = "<group>"; };
+		F2AE272E1A6C0C7F00772D08 /* MoneyTableDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTableDataManager.m; sourceTree = "<group>"; };
 		F2B382451A6BB5E700EE9618 /* MoneyTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTable.h; sourceTree = "<group>"; };
 		F2B382461A6BB5E700EE9618 /* MoneyTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +115,8 @@
 				F2B382451A6BB5E700EE9618 /* MoneyTable.h */,
 				F2B382461A6BB5E700EE9618 /* MoneyTable.m */,
 				F2341A491A5EA62500DCD144 /* Supporting Files */,
+				F2AE272D1A6C0C7F00772D08 /* MoneyTableDataManager.h */,
+				F2AE272E1A6C0C7F00772D08 /* MoneyTableDataManager.m */,
 			);
 			path = KIEasyCashBook;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			files = (
 				F2341A741A5EE9B300DCD144 /* AddBalanceListModalViewController.m in Sources */,
 				F2341A4F1A5EA62500DCD144 /* AppDelegate.m in Sources */,
+				F2AE272F1A6C0C7F00772D08 /* MoneyTableDataManager.m in Sources */,
 				F2341A521A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld in Sources */,
 				F2341A551A5EA62500DCD144 /* MainViewController.m in Sources */,
 				F2341A771A5EEBEB00DCD144 /* BalanceListDetailViewController.m in Sources */,

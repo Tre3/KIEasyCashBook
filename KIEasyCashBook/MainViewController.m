@@ -7,12 +7,14 @@
 //
 
 #import "MainViewController.h"
-#import "AppDelegate.h"
 #import "BalanceListDetailViewController.h"
 #import "AddBalanceListModalViewController.h"
+#import "MoneyTable.h"
+#import "MoneyTableDataManager.h"
 
 @interface MainViewController () {
     NSMutableArray *balanceLists;
+    NSManagedObjectContext *context;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *tableEditButton;
 @property (weak, nonatomic) IBOutlet UITableView *balanceListSummary;
@@ -111,27 +113,26 @@
 // CoreDataに新規残高リストを登録するインスタンスメソッド
 -(void)insertNewListToMoneyTable:(NSString*)name
 {
-    AppDelegate* appDelegate = [[AppDelegate alloc] init];
-    // contextはNSManagedObjectContextのインスタンス
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
+
+    NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
     
     // NSEntityDescriptionのinsertNewObjectForEntityForName:を利用して、
     // NSManagedObjetのインスタンスを取得
-    NSManagedObject *newContact;
-    newContact = [NSEntityDescription insertNewObjectForEntityForName:@"MoneyTable" inManagedObjectContext:context];
+    NSManagedObject *newMoneyTable;
+    newMoneyTable = [NSEntityDescription insertNewObjectForEntityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
     
     NSDate *now = [NSDate date];
     NSNumber *amountOfMoney = 0;
     
     // NSManagedObjectに各属性値を設定
-    [newContact setValue:name forKey:@"name"];
-    [newContact setValue:now forKey:@"date"];
-    [newContact setValue:@"デフォルト" forKey:@"reason"];
-    [newContact setValue:amountOfMoney forKey:@"amountOfMoney"];
+    [newMoneyTable setValue:name forKey:@"name"];
+    [newMoneyTable setValue:now forKey:@"date"];
+    [newMoneyTable setValue:@"デフォルト" forKey:@"reason"];
+    [newMoneyTable setValue:amountOfMoney forKey:@"amountOfMoney"];
     
     // managedObjectContextオブジェクトのsaveメソッドでデータを保存
-    [appDelegate saveContext];
-
+    [moneyTableDataManager saveContext];
 }
 
 @end
