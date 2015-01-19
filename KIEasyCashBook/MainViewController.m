@@ -31,6 +31,11 @@
     self.balanceListSummary.dataSource = self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    balanceLists = [self createMoneyTableArrray];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -89,23 +94,23 @@
     }
 }
 
-// TableViewに新規残高リストを追加して表示するインスタンスメソッド
--(void) insertNewList:(id)sender
-{
-    if (!balanceLists) {
-        balanceLists = [[NSMutableArray alloc] init];
-    }
-    [balanceLists insertObject:sender atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.balanceListSummary insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+//// TableViewに新規残高リストを追加して表示するインスタンスメソッド
+//-(void) insertNewList:(id)sender
+//{
+//    if (!balanceLists) {
+//        balanceLists = [[NSMutableArray alloc] init];
+//    }
+//    [balanceLists insertObject:sender atIndex:0];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.balanceListSummary insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
 
 // ModalViewからメイン画面に戻ってくるときのセグエを判定し、必要な処理を行う
 -(IBAction)unwindToMaster:(UIStoryboardSegue *)segue
 {
     if ([segue.identifier isEqualToString:@"save"]) {
         AddBalanceListModalViewController *addBalanceListModalViewController = (AddBalanceListModalViewController *)segue.sourceViewController;
-        [self insertNewList:addBalanceListModalViewController.addBalanceListTextField.text];
+//        [self insertNewList:addBalanceListModalViewController.addBalanceListTextField.text];
         [self insertNewListToMoneyTable:addBalanceListModalViewController.addBalanceListTextField.text];
     }
 }
@@ -133,6 +138,44 @@
     
     // managedObjectContextオブジェクトのsaveメソッドでデータを保存
     [moneyTableDataManager saveContext];
+}
+
+-(NSMutableArray*)createMoneyTableArrray
+{
+    MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
+    
+    NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    // 検索対象のエンティティを指定
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entityDesc];
+    
+    // 全要素を取得
+    NSPredicate *pred = [NSPredicate predicateWithValue:YES];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *moneyTableArray = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    NSMutableArray *moneyTableMutableArray = [[NSMutableArray alloc] init];
+    
+    BOOL hasListName;
+    for (MoneyTable *moneyTable in moneyTableArray) {
+        
+        hasListName = false;
+        for (NSString *listName in moneyTableMutableArray) {
+            if ([listName isEqualToString:moneyTable.name]) {
+                hasListName = true;
+            }
+        }
+        if (!hasListName) {
+            [moneyTableMutableArray addObject:moneyTable.name];
+        }
+    }
+    
+    return moneyTableMutableArray;
 }
 
 @end
