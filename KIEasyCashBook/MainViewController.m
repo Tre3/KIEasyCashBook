@@ -94,6 +94,15 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteMoneyTableEntitiy:balanceLists[indexPath.row]];
+        [balanceLists removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 //// TableViewに新規残高リストを追加して表示するインスタンスメソッド
 //-(void) insertNewList:(id)sender
 //{
@@ -176,6 +185,41 @@
     }
     
     return moneyTableMutableArray;
+}
+
+- (BOOL)deleteMoneyTableEntitiy:(NSString *)name {
+    
+    MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
+    
+    NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    // 検索対象のエンティティを指定
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entityDesc];
+    
+    // 要素を検索
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@)", name];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *moneyTableArray = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    for (NSManagedObject *object in moneyTableArray) {
+        [managedObjectContext deleteObject:object];
+    }
+    
+    NSString *logMessage = [[NSString alloc]init];
+    if (![managedObjectContext save:&error]) {
+        logMessage = @"faled to delete objects";
+        return false;
+    } else {
+        logMessage = @"successed to delete objects";
+        return true;
+    }
+    
+    return false;
 }
 
 @end
