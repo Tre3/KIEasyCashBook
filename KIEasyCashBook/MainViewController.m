@@ -119,8 +119,12 @@
 {
     if ([segue.identifier isEqualToString:@"save"]) {
         AddBalanceListModalViewController *addBalanceListModalViewController = (AddBalanceListModalViewController *)segue.sourceViewController;
-//        [self insertNewList:addBalanceListModalViewController.addBalanceListTextField.text];
-        [self insertNewListToMoneyTable:addBalanceListModalViewController.addBalanceListTextField.text];
+        if ([addBalanceListModalViewController.addBalanceListTextField.text length] > 0) {
+            [self insertNewListToMoneyTable:addBalanceListModalViewController.addBalanceListTextField.text];
+        } else {
+            // Todo
+            // アラートの表示
+        }
     }
 }
 
