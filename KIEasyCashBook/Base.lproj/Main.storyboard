@@ -282,12 +282,6 @@
                                             </mask>
                                         </variation>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使い道" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV4-jg-AVA">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金額" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbS-5G-LDC">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <constraints>
@@ -371,6 +365,12 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使い道" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV4-jg-AVA">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="QbS-5G-LDC" firstAttribute="leading" secondItem="ncx-A7-MSc" secondAttribute="leading" constant="8" id="3DD-Tc-v2a"/>
@@ -398,11 +398,11 @@
                                         <exclude reference="lsU-am-GAY"/>
                                         <exclude reference="9DK-dc-VCd"/>
                                         <exclude reference="Fi5-av-H2V"/>
-                                        <exclude reference="vV4-jg-AVA"/>
                                         <exclude reference="QbS-5G-LDC"/>
                                         <exclude reference="TMX-Bz-9q6"/>
                                         <exclude reference="OkS-ey-ARp"/>
                                         <exclude reference="Lnd-pl-smg"/>
+                                        <exclude reference="vV4-jg-AVA"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="UWc-OX-rrE"/>
@@ -431,11 +431,11 @@
                                         <include reference="lsU-am-GAY"/>
                                         <include reference="9DK-dc-VCd"/>
                                         <include reference="Fi5-av-H2V"/>
-                                        <include reference="vV4-jg-AVA"/>
                                         <include reference="QbS-5G-LDC"/>
                                         <include reference="TMX-Bz-9q6"/>
                                         <include reference="OkS-ey-ARp"/>
                                         <include reference="Lnd-pl-smg"/>
+                                        <include reference="vV4-jg-AVA"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="UWc-OX-rrE"/>

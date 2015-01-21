@@ -69,6 +69,11 @@
 
 // 画面遷移前に次画面にパラメータを渡す
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (self.balanceListSummary.isEditing) {
+        [self.balanceListSummary setEditing:NO animated:YES];
+        self.tableEditButton.title = @"編集";
+    }
+    
     //2つ目の画面にパラメータを渡して遷移する
     if ([segue.identifier isEqualToString:@"toBalanceListDetailSegue"]) {
         //ここでパラメータを渡す
@@ -123,7 +128,7 @@
             [self insertNewListToMoneyTable:addBalanceListModalViewController.addBalanceListTextField.text];
         } else {
             // Todo
-            // アラートの表示
+            // アラートの表示（ここで可能か？）
         }
     }
 }
