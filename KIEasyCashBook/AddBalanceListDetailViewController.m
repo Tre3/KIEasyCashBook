@@ -25,6 +25,13 @@
     self.plusOrMinusPickerView.delegate = self;
     
     plusOrMinusArray = [NSArray arrayWithObjects:@"+", @"-", nil];
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeSoftKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)closeSoftKeyboard {
+    [self.view endEditing: YES];
 }
 
 - (void)didReceiveMemoryWarning {
