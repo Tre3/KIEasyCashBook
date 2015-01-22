@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddBalanceListDetailViewController : UIViewController  <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface AddBalanceListDetailViewController : UIViewController
 
 @end
