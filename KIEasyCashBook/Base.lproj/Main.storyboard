@@ -502,6 +502,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="amountOfMoneyTextField" destination="OkS-ey-ARp" id="9bn-8n-9sL"/>
+                        <outlet property="wholeScrollView" destination="ncx-A7-MSc" id="aAy-N3-hFv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pky-dg-eEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="C8y-LR-thx" userLabel="Exit" sceneMemberID="exit"/>
