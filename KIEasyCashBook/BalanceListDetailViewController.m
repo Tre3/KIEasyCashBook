@@ -55,7 +55,15 @@
         NSManagedObject *newMoneyTable;
         newMoneyTable = [NSEntityDescription insertNewObjectForEntityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
         
-        NSNumber *amountOfMoney = [[NSNumber alloc] initWithInteger:100];
+        int temp = 0;
+        
+        if (addBalanceListDetailViewController.isIncomeOrOutgoSegmentedControl.selectedSegmentIndex == 0)
+        {
+            temp = 0 - addBalanceListDetailViewController.amountOfMoneyTextField.text.intValue;
+        } else {
+            temp = addBalanceListDetailViewController.amountOfMoneyTextField.text.intValue;
+        }
+        NSNumber *amountOfMoney = [[NSNumber alloc] initWithInteger:temp];
         
         // NSManagedObjectに各属性値を設定
         [newMoneyTable setValue:tableName forKey:@"name"];

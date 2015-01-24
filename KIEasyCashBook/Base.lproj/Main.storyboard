@@ -273,8 +273,8 @@
                                             <constraint firstAttribute="width" constant="81" id="fV4-bg-Xy4"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="収入"/>
                                             <segment title="支出"/>
+                                            <segment title="収入"/>
                                         </segments>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -511,6 +511,7 @@
                         <outlet property="amountOfMoneyTextField" destination="OkS-ey-ARp" id="9bn-8n-9sL"/>
                         <outlet property="datePicker" destination="9DK-dc-VCd" id="Id4-ra-NZz"/>
                         <outlet property="howToUseTextField" destination="TMX-Bz-9q6" id="Sfu-g6-yfQ"/>
+                        <outlet property="isIncomeOrOutgoSegmentedControl" destination="Fi5-av-H2V" id="oA6-sl-t2m"/>
                         <outlet property="wholeScrollView" destination="ncx-A7-MSc" id="aAy-N3-hFv"/>
                     </connections>
                 </viewController>
