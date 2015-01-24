@@ -11,8 +11,10 @@
 @interface MainViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSString *tableName;
+    int entireFortune;
 }
 @property NSString *tableName;
+@property int entireFortune;
 
 @end
 

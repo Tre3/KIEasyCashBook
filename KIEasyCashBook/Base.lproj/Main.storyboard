@@ -71,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="balanceListSummary" destination="oBe-mk-uCd" id="A6x-fA-P8F"/>
+                        <outlet property="entireFortuneLabel" destination="fZR-NL-kGe" id="Ttw-F8-odU"/>
                         <outlet property="tableEditButton" destination="lte-WR-Lp4" id="hAb-8c-8z0"/>
                         <segue destination="x4k-Jf-Yq0" kind="presentation" identifier="toBalanceListDetailSegue" id="m5D-o2-Thc"/>
                     </connections>

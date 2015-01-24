@@ -55,7 +55,7 @@
         NSManagedObject *newMoneyTable;
         newMoneyTable = [NSEntityDescription insertNewObjectForEntityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
         
-        NSNumber *amountOfMoney = 0;
+        NSNumber *amountOfMoney = [[NSNumber alloc] initWithInteger:100];
         
         // NSManagedObjectに各属性値を設定
         [newMoneyTable setValue:tableName forKey:@"name"];

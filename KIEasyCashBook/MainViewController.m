@@ -18,11 +18,13 @@
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *tableEditButton;
 @property (weak, nonatomic) IBOutlet UITableView *balanceListSummary;
+@property (weak, nonatomic) IBOutlet UILabel *entireFortuneLabel;
 
 @end
 
 @implementation MainViewController
 @synthesize tableName;
+@synthesize entireFortune;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +36,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     balanceLists = [self createMoneyTableArrray];
+    self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計:%@ 円",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -179,6 +182,8 @@
     
     NSMutableArray *moneyTableMutableArray = [[NSMutableArray alloc] init];
     
+    int entireFortuneTemp = 0;
+    
     BOOL hasListName;
     for (MoneyTable *moneyTable in moneyTableArray) {
         
@@ -191,7 +196,12 @@
         if (!hasListName) {
             [moneyTableMutableArray addObject:moneyTable.name];
         }
+        
+        NSLog(@"%d", [moneyTable.amountOfMoney intValue]);
+        entireFortuneTemp = entireFortuneTemp + [moneyTable.amountOfMoney intValue];
     }
+    
+    entireFortune = entireFortuneTemp;
     
     return moneyTableMutableArray;
 }
