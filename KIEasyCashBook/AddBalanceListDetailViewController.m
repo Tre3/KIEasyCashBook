@@ -7,10 +7,9 @@
 //
 
 #import "AddBalanceListDetailViewController.h"
+#import "MoneyTableDataManager.h"
 
 @interface AddBalanceListDetailViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *amountOfMoneyTextField;
-@property (weak, nonatomic) IBOutlet UIScrollView *wholeScrollView;
 
 @end
 

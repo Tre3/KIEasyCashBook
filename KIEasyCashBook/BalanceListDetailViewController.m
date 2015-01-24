@@ -7,6 +7,7 @@
 //
 
 #import "BalanceListDetailViewController.h"
+#import "AddBalanceListDetailViewController.h"
 #import "MoneyTable.h"
 #import "MoneyTableDataManager.h"
 
@@ -42,7 +43,29 @@
 
 -(IBAction)unwindToBalanceListDetail:(UIStoryboardSegue *)segue
 {
-    
+    if ([segue.identifier isEqualToString:@"insert"]) {
+        AddBalanceListDetailViewController *addBalanceListDetailViewController = (AddBalanceListDetailViewController *)segue.sourceViewController;
+        
+        MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
+        
+        NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
+        
+        // NSEntityDescriptionのinsertNewObjectForEntityForName:を利用して、
+        // NSManagedObjetのインスタンスを取得
+        NSManagedObject *newMoneyTable;
+        newMoneyTable = [NSEntityDescription insertNewObjectForEntityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
+        
+        NSNumber *amountOfMoney = 0;
+        
+        // NSManagedObjectに各属性値を設定
+        [newMoneyTable setValue:tableName forKey:@"name"];
+        [newMoneyTable setValue:addBalanceListDetailViewController.datePicker.date forKey:@"date"];
+        [newMoneyTable setValue:addBalanceListDetailViewController.howToUseTextField.text forKey:@"reason"];
+        [newMoneyTable setValue:amountOfMoney forKey:@"amountOfMoney"];
+        
+        // managedObjectContextオブジェクトのsaveメソッドでデータを保存
+        [moneyTableDataManager saveContext];
+    }
 }
 
 // CoreDataからデータを検索・取得するインスタンスメソッド
@@ -65,6 +88,12 @@
     NSError *error;
     NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
     return objects;
+}
+
+// CoreDataに新規残高リストを登録するインスタンスメソッド
+-(void)insertNewListToMoneyTable
+{
+    
 }
 
 @end

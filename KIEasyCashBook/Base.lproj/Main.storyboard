@@ -101,7 +101,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RMg-jx-S2E">
                                             <connections>
-                                                <segue destination="Pnm-Oi-5M8" kind="presentation" id="GtJ-cz-t63"/>
+                                                <segue destination="Pnm-Oi-5M8" kind="presentation" identifier="toAddBalanceListDetailSegue" id="GtJ-cz-t63"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -211,10 +211,14 @@
                                     <navigationItem title="新規入出金" id="F9i-0f-ESA">
                                         <barButtonItem key="leftBarButtonItem" title="キャンセル" id="mb0-em-bFt">
                                             <connections>
-                                                <segue destination="C8y-LR-thx" kind="unwind" unwindAction="unwindToBalanceListDetail:" id="ouW-46-AgW"/>
+                                                <segue destination="C8y-LR-thx" kind="unwind" identifier="cancel1" unwindAction="unwindToBalanceListDetail:" id="ouW-46-AgW"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="保存" id="uEF-Ia-HDl"/>
+                                        <barButtonItem key="rightBarButtonItem" title="保存" id="uEF-Ia-HDl">
+                                            <connections>
+                                                <segue destination="C8y-LR-thx" kind="unwind" identifier="insert" unwindAction="unwindToBalanceListDetail:" id="MxT-NT-mO4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -504,6 +508,8 @@
                     </view>
                     <connections>
                         <outlet property="amountOfMoneyTextField" destination="OkS-ey-ARp" id="9bn-8n-9sL"/>
+                        <outlet property="datePicker" destination="9DK-dc-VCd" id="Id4-ra-NZz"/>
+                        <outlet property="howToUseTextField" destination="TMX-Bz-9q6" id="Sfu-g6-yfQ"/>
                         <outlet property="wholeScrollView" destination="ncx-A7-MSc" id="aAy-N3-hFv"/>
                     </connections>
                 </viewController>

@@ -10,4 +10,9 @@
 
 @interface AddBalanceListDetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *amountOfMoneyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *howToUseTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView *wholeScrollView;
+
 @end
