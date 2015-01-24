@@ -59,7 +59,8 @@
     }
     
     cell.textLabel.text = balanceLists[indexPath.row];
-    cell.detailTextLabel.text = balanceLists[indexPath.row];
+    NSString *detailText = [NSString stringWithFormat:@"残高:%@ 円",[[NSString alloc] initWithFormat:@"%d", [self searchMoneyTableAndReturnSum:balanceLists[indexPath.row]]]];
+    cell.detailTextLabel.text = detailText;
     
     return cell;
 }
@@ -239,6 +240,35 @@
     }
     
     return false;
+}
+
+- (int)searchMoneyTableAndReturnSum:(NSString *)name {
+    MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
+    
+    NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    // 検索対象のエンティティを指定
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
+    [request setEntity:entityDesc];
+    
+    // 要素を検索
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@)", name];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *moneyTableArray = [managedObjectContext executeFetchRequest:request error:&error];
+    
+    int entireFortuneTemp = 0;
+    
+    for (MoneyTable *moneyTable in moneyTableArray) {
+        
+        NSLog(@"%d", [moneyTable.amountOfMoney intValue]);
+        entireFortuneTemp = entireFortuneTemp + [moneyTable.amountOfMoney intValue];
+    }
+    
+    return entireFortuneTemp;
 }
 
 @end
