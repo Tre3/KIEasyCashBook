@@ -109,6 +109,8 @@
         [self deleteMoneyTableEntitiy:balanceLists[indexPath.row]];
         [balanceLists removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        balanceLists = [self createMoneyTableArrray];
+        self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計:%@ 円",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
     }
 }
 
