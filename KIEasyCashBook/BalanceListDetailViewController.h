@@ -11,7 +11,9 @@
 @interface BalanceListDetailViewController : UIViewController
 {
     NSString *tableName;
+    int headingHeight;
 }
 
 @property NSString *tableName;
+@property int headingHeight;
 @end

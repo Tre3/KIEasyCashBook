@@ -11,29 +11,50 @@
 #import "MoneyTable.h"
 #import "MoneyTableDataManager.h"
 
+static const int kHeadingHeight = 40;
+static const int kGridCellHeight = 50;
+
 @interface BalanceListDetailViewController ()
+
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-@property (weak, nonatomic) IBOutlet UILabel *label1;
-@property (weak, nonatomic) IBOutlet UILabel *label2;
-@property (weak, nonatomic) IBOutlet UILabel *label3;
-@property (weak, nonatomic) IBOutlet UILabel *label4;
+@property (nonatomic) UIScrollView *gridScrollView;
+@property (nonatomic) int sumOfBalance;
 
 @end
 
 @implementation BalanceListDetailViewController
 @synthesize tableName;
+@synthesize headingHeight;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationBar.topItem.title = tableName;
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
     NSArray *moneyTableObjects;
     moneyTableObjects = [self fetchRequest];
     
-    MoneyTable *moneyTable = [moneyTableObjects objectAtIndex:0];
-    NSLog(@"%@", moneyTable.name);
-    self.label1.text = moneyTable.name;
-    self.label2.text = moneyTable.reason;
+    [self createDetailGridTableHeadingAndGridScrollview:[moneyTableObjects count]];
+    
+    self.sumOfBalance = 0;
+    
+    for (int i = 0; i < [moneyTableObjects count]; i++) {
+        MoneyTable *moneyTable = [moneyTableObjects objectAtIndex:i];
+        self.sumOfBalance = self.sumOfBalance + [moneyTable.amountOfMoney intValue];
+        
+        [self createDetailGridCell:moneyTable lineNumber:i amountOfBalance:self.sumOfBalance];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.gridScrollView removeFromSuperview];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,6 +123,108 @@
 -(void)insertNewListToMoneyTable
 {
     
+}
+
+-(void)createDetailGridTableHeadingAndGridScrollview:(NSUInteger)lineNumber
+{
+    CGRect mainScreenFrame = [[UIScreen mainScreen] bounds];
+    CGRect navigationBarFrame = self.navigationBar.frame;
+    CGRect statusFrame = [UIApplication sharedApplication].statusBarFrame;
+    
+    int tableHeading_y_coodinate = navigationBarFrame.size.height + statusFrame.size.height;
+    
+    UILabel *labelDate = [[UILabel alloc] initWithFrame:CGRectMake(0,tableHeading_y_coodinate,mainScreenFrame.size.width/4,kHeadingHeight)];
+    labelDate.text = @"日時";
+    labelDate.textAlignment = NSTextAlignmentCenter;
+    labelDate.layer.borderColor = [UIColor grayColor].CGColor;
+    labelDate.layer.borderWidth = 1.0;
+    labelDate.backgroundColor = [UIColor lightGrayColor];
+    
+    UILabel *labelReason = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width/4,tableHeading_y_coodinate,mainScreenFrame.size.width/4,kHeadingHeight)];
+    labelReason.text = @"使い道";
+    labelReason.textAlignment = NSTextAlignmentCenter;
+    labelReason.layer.borderColor = [UIColor grayColor].CGColor;
+    labelReason.layer.borderWidth = 1.0;
+    labelReason.backgroundColor = [UIColor lightGrayColor];
+    
+    UILabel *labelAmountOfMoney = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width/2,tableHeading_y_coodinate,mainScreenFrame.size.width/4,kHeadingHeight)];
+    labelAmountOfMoney.text = @"金額";
+    labelAmountOfMoney.textAlignment = NSTextAlignmentCenter;
+    labelAmountOfMoney.layer.borderColor = [UIColor grayColor].CGColor;
+    labelAmountOfMoney.layer.borderWidth = 1.0;
+    labelAmountOfMoney.backgroundColor = [UIColor lightGrayColor];
+    
+    UILabel *labelAmountOfBalance = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width*3/4,tableHeading_y_coodinate,mainScreenFrame.size.width/4,kHeadingHeight)];
+    labelAmountOfBalance.text = @"残額";
+    labelAmountOfBalance.textAlignment = NSTextAlignmentCenter;
+    labelAmountOfBalance.layer.borderColor = [UIColor grayColor].CGColor;
+    labelAmountOfBalance.layer.borderWidth = 1.0;
+    labelAmountOfBalance.backgroundColor = [UIColor lightGrayColor];
+    
+    [self.view addSubview:labelDate];
+    [self.view addSubview:labelReason];
+    [self.view addSubview:labelAmountOfMoney];
+    [self.view addSubview:labelAmountOfBalance];
+    
+    self.gridScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, tableHeading_y_coodinate+kHeadingHeight, mainScreenFrame.size.width, mainScreenFrame.size.height - navigationBarFrame.size.height - statusFrame.size.height - kHeadingHeight)];
+    
+    self.gridScrollView.scrollEnabled = YES;
+    self.gridScrollView.contentSize = CGSizeMake(mainScreenFrame.size.width, kGridCellHeight*lineNumber);
+    
+    [self.view addSubview:self.gridScrollView];
+}
+
+-(void)createDetailGridCell:(MoneyTable*)moneyTableObject lineNumber:(int)lineNumber amountOfBalance:(int)amountOfBalance
+{
+    CGRect mainScreenFrame = [[UIScreen mainScreen] bounds];
+    
+    UILabel *cellDate = [[UILabel alloc] initWithFrame:CGRectMake(0,kGridCellHeight*lineNumber,mainScreenFrame.size.width/4,kGridCellHeight)];
+    NSDate* usedDate = moneyTableObject.date;
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+    cellDate.text = [dateFormatter stringFromDate:usedDate];
+    cellDate.font = [UIFont systemFontOfSize:10];
+    cellDate.textAlignment = NSTextAlignmentCenter;
+    cellDate.layer.borderColor = [UIColor grayColor].CGColor;
+    cellDate.layer.borderWidth = 1.0;
+    
+    UILabel *cellReason = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width/4,kGridCellHeight*lineNumber,mainScreenFrame.size.width/4,kGridCellHeight)];
+    cellReason.text = moneyTableObject.reason;
+    cellReason.font = [UIFont systemFontOfSize:10];
+    cellReason.textAlignment = NSTextAlignmentCenter;
+    cellReason.layer.borderColor = [UIColor grayColor].CGColor;
+    cellReason.layer.borderWidth = 1.0;
+    
+    UILabel *cellAmountOfMoney = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width/2,kGridCellHeight*lineNumber,mainScreenFrame.size.width/4,kGridCellHeight)];
+    cellAmountOfMoney.text = moneyTableObject.amountOfMoney.stringValue;
+    
+    if (moneyTableObject.amountOfMoney.intValue > 0) {
+        cellAmountOfMoney.textColor = [UIColor blueColor];
+    } else if (moneyTableObject.amountOfMoney.intValue < 0) {
+        cellAmountOfMoney.textColor = [UIColor redColor];
+    }
+    
+    cellAmountOfMoney.textAlignment = NSTextAlignmentCenter;
+    cellAmountOfMoney.layer.borderColor = [UIColor grayColor].CGColor;
+    cellAmountOfMoney.layer.borderWidth = 1.0;
+    
+    UILabel *cellAmountOfBalance = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width*3/4,kGridCellHeight*lineNumber,mainScreenFrame.size.width/4,kGridCellHeight)];
+    cellAmountOfBalance.text = [NSString stringWithFormat:@"%d", amountOfBalance];
+    
+    if (amountOfBalance > 0) {
+        cellAmountOfBalance.textColor = [UIColor blueColor];
+    } else if (amountOfBalance < 0) {
+        cellAmountOfBalance.textColor = [UIColor redColor];
+    }
+    
+    cellAmountOfBalance.textAlignment = NSTextAlignmentCenter;
+    cellAmountOfBalance.layer.borderColor = [UIColor grayColor].CGColor;
+    cellAmountOfBalance.layer.borderWidth = 1.0;
+    
+    [self.gridScrollView addSubview:cellDate];
+    [self.gridScrollView addSubview:cellReason];
+    [self.gridScrollView addSubview:cellAmountOfMoney];
+    [self.gridScrollView addSubview:cellAmountOfBalance];
 }
 
 @end

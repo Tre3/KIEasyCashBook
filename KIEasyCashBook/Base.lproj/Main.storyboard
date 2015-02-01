@@ -108,43 +108,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xf-8f-h1V">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="1" green="0.13253661080000001" blue="0.1645064192" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="81" width="42" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeW-hN-efB">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="66" y="81" width="42" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1q3-y4-wIu">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="116" y="81" width="42" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMR-5H-R3q">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="81" width="42" height="21"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -155,10 +118,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="WsQ-vg-Hqq"/>
-                                <exclude reference="1xf-8f-h1V"/>
-                                <exclude reference="AeW-hN-efB"/>
-                                <exclude reference="1q3-y4-wIu"/>
-                                <exclude reference="sMR-5H-R3q"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="I3K-V8-hWO"/>
@@ -169,10 +128,6 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="WsQ-vg-Hqq"/>
-                                <include reference="1xf-8f-h1V"/>
-                                <include reference="AeW-hN-efB"/>
-                                <include reference="1q3-y4-wIu"/>
-                                <include reference="sMR-5H-R3q"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="I3K-V8-hWO"/>
@@ -182,10 +137,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="label1" destination="1xf-8f-h1V" id="xxn-0L-ft2"/>
-                        <outlet property="label2" destination="AeW-hN-efB" id="UsN-XA-eWl"/>
-                        <outlet property="label3" destination="1q3-y4-wIu" id="wcZ-bA-9oR"/>
-                        <outlet property="label4" destination="sMR-5H-R3q" id="mLb-hn-wwB"/>
                         <outlet property="navigationBar" destination="WsQ-vg-Hqq" id="TtS-m0-S7d"/>
                     </connections>
                 </viewController>
