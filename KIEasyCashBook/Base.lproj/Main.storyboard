@@ -45,7 +45,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="帳簿一覧" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7d-PB-im5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="帳簿一覧" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7d-PB-im5">
                                 <rect key="frame" x="16" y="67" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -627,9 +627,12 @@
                                 <exclude reference="Fdl-cY-jFQ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ThI-Fg-MCR"/>
-                                <exclude reference="XlI-KI-cg9"/>
-                                <exclude reference="n7T-cy-mNn"/>
+                                <exclude reference="C1V-AW-5ho"/>
+                                <exclude reference="GGR-K8-8eZ"/>
+                                <exclude reference="s0M-Iv-KSm"/>
+                                <exclude reference="0mq-Nv-5rK"/>
+                                <exclude reference="PRH-Zd-B0Z"/>
+                                <exclude reference="uzc-x7-KZo"/>
                                 <exclude reference="2LE-rz-JDy"/>
                                 <exclude reference="vAY-jO-T7e"/>
                                 <exclude reference="5Ec-Of-LfT"/>
@@ -639,12 +642,9 @@
                                 <exclude reference="LLa-Aw-kMw"/>
                                 <exclude reference="LaI-Kw-iYo"/>
                                 <exclude reference="ec6-rZ-gD8"/>
-                                <exclude reference="0mq-Nv-5rK"/>
-                                <exclude reference="PRH-Zd-B0Z"/>
-                                <exclude reference="uzc-x7-KZo"/>
-                                <exclude reference="C1V-AW-5ho"/>
-                                <exclude reference="GGR-K8-8eZ"/>
-                                <exclude reference="s0M-Iv-KSm"/>
+                                <exclude reference="ThI-Fg-MCR"/>
+                                <exclude reference="XlI-KI-cg9"/>
+                                <exclude reference="n7T-cy-mNn"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -657,9 +657,12 @@
                                 <include reference="Fdl-cY-jFQ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ThI-Fg-MCR"/>
-                                <include reference="XlI-KI-cg9"/>
-                                <include reference="n7T-cy-mNn"/>
+                                <include reference="C1V-AW-5ho"/>
+                                <include reference="GGR-K8-8eZ"/>
+                                <include reference="s0M-Iv-KSm"/>
+                                <include reference="0mq-Nv-5rK"/>
+                                <include reference="PRH-Zd-B0Z"/>
+                                <include reference="uzc-x7-KZo"/>
                                 <include reference="2LE-rz-JDy"/>
                                 <include reference="vAY-jO-T7e"/>
                                 <include reference="5Ec-Of-LfT"/>
@@ -669,12 +672,9 @@
                                 <include reference="LLa-Aw-kMw"/>
                                 <include reference="LaI-Kw-iYo"/>
                                 <include reference="ec6-rZ-gD8"/>
-                                <include reference="0mq-Nv-5rK"/>
-                                <include reference="PRH-Zd-B0Z"/>
-                                <include reference="uzc-x7-KZo"/>
-                                <include reference="C1V-AW-5ho"/>
-                                <include reference="GGR-K8-8eZ"/>
-                                <include reference="s0M-Iv-KSm"/>
+                                <include reference="ThI-Fg-MCR"/>
+                                <include reference="XlI-KI-cg9"/>
+                                <include reference="n7T-cy-mNn"/>
                             </mask>
                         </variation>
                     </view>
