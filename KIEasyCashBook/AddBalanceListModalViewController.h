@@ -10,4 +10,5 @@
 
 @interface AddBalanceListModalViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *addBalanceListTextField;
+@property (weak, nonatomic) IBOutlet UITextField *addBalanceListAmountOfMoneyTextField;
 @end

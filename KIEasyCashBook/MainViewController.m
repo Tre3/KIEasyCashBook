@@ -130,8 +130,8 @@
 {
     if ([segue.identifier isEqualToString:@"save"]) {
         AddBalanceListModalViewController *addBalanceListModalViewController = (AddBalanceListModalViewController *)segue.sourceViewController;
-        if ([addBalanceListModalViewController.addBalanceListTextField.text length] > 0) {
-            [self insertNewListToMoneyTable:addBalanceListModalViewController.addBalanceListTextField.text];
+        if (([addBalanceListModalViewController.addBalanceListTextField.text length] > 0) && ([addBalanceListModalViewController.addBalanceListAmountOfMoneyTextField.text length] > 0)) {
+            [self insertNewListToMoneyTable:addBalanceListModalViewController.addBalanceListTextField.text amountOfMoneyText:addBalanceListModalViewController.addBalanceListAmountOfMoneyTextField.text];
         } else {
             // Todo
             // アラートの表示（ここで可能か？）
@@ -140,7 +140,7 @@
 }
 
 // CoreDataに新規残高リストを登録するインスタンスメソッド
--(void)insertNewListToMoneyTable:(NSString*)name
+-(void)insertNewListToMoneyTable:(NSString*)name amountOfMoneyText:(NSString*)amountOfMoneyText
 {
     MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
 
@@ -152,12 +152,12 @@
     newMoneyTable = [NSEntityDescription insertNewObjectForEntityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
     
     NSDate *now = [NSDate date];
-    NSNumber *amountOfMoney = 0;
+    NSNumber *amountOfMoney = [NSNumber numberWithInt:[amountOfMoneyText intValue]];;
     
     // NSManagedObjectに各属性値を設定
     [newMoneyTable setValue:name forKey:@"name"];
     [newMoneyTable setValue:now forKey:@"date"];
-    [newMoneyTable setValue:@"デフォルト" forKey:@"reason"];
+    [newMoneyTable setValue:@"初期金額" forKey:@"reason"];
     [newMoneyTable setValue:amountOfMoney forKey:@"amountOfMoney"];
     
     // managedObjectContextオブジェクトのsaveメソッドでデータを保存
