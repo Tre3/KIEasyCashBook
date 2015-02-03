@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KIEasyCashBook/BalanceListDetailViewController.m"
-            timestampString = "444481393.944934"
+            timestampString = "444664296.727498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "-fetchRequest"
             landmarkType = "5">
          </BreakpointContent>
