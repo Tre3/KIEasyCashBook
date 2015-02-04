@@ -143,7 +143,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVf-W5-KUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="k6J-1I-rle" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="423" y="1085"/>
+            <point key="canvasLocation" x="1269" y="395"/>
         </scene>
         <!--Add Balance List Detail View Controller-->
         <scene sceneID="AdT-cx-xvg">
@@ -469,7 +469,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pky-dg-eEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="C8y-LR-thx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="1113"/>
+            <point key="canvasLocation" x="2583" y="349"/>
         </scene>
         <!--Add Balance List Modal View Controller-->
         <scene sceneID="Mkz-ck-noG">
@@ -686,7 +686,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TW-Wi-OAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JR1-gh-1UG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1462.5" y="262"/>
+            <point key="canvasLocation" x="2500.5" y="-431"/>
         </scene>
     </scenes>
 </document>
