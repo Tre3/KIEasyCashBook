@@ -42,6 +42,8 @@
 {
     balanceLists = [self createMoneyTableArrray];
     self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計:%@ 円",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
+    
+    [self.balanceListSummary reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
