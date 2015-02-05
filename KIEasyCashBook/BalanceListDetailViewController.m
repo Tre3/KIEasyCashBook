@@ -49,8 +49,10 @@ static const int kGridCellHeight = 50;
     
     self.sumOfBalance = 0;
     
-    for (int i = 0; i < [moneyTableObjects count]; i++) {
-        MoneyTable *moneyTable = [moneyTableObjects objectAtIndex:i];
+    NSArray *sortedMoneyTableObjects = [self sortMoneyTable:moneyTableObjects];
+    
+    for (int i = 0; i < [sortedMoneyTableObjects count]; i++) {
+        MoneyTable *moneyTable = [sortedMoneyTableObjects objectAtIndex:i];
         self.sumOfBalance = self.sumOfBalance + [moneyTable.amountOfMoney intValue];
         
         [self createDetailGridCell:moneyTable lineNumber:i amountOfBalance:self.sumOfBalance];
@@ -122,6 +124,13 @@ static const int kGridCellHeight = 50;
     NSError *error;
     NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
     return objects;
+}
+
+-(NSArray*)sortMoneyTable:(NSArray*)moneyTableObjectArray
+{
+    NSSortDescriptor *sortDateDesc = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+    
+    return [moneyTableObjectArray sortedArrayUsingDescriptors:@[sortDateDesc]];
 }
 
 // CoreDataに新規残高リストを登録するインスタンスメソッド
