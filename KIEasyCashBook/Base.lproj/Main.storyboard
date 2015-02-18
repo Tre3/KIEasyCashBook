@@ -41,33 +41,84 @@
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残高合計：３０００円" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZR-NL-kGe">
                                 <rect key="frame" x="16" y="579" width="568" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.58039215686274515" green="0.5725490196078431" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="4jJ-Iq-GIs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4jJ-Iq-GIs"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4jJ-Iq-GIs"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="家計簿一覧" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7d-PB-im5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="   家計簿一覧" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7d-PB-im5">
                                 <rect key="frame" x="16" y="67" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.64740379006934967" green="0.63913435071263591" blue="0.65719696969696972" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="BHg-RM-yjz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BHg-RM-yjz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="BHg-RM-yjz"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="EKa-6u-29m" secondAttribute="trailing" constant="-16" id="0QK-cD-gNp"/>
+                            <constraint firstItem="v7d-PB-im5" firstAttribute="top" secondItem="EKa-6u-29m" secondAttribute="bottom" id="4Yf-I7-so5"/>
                             <constraint firstItem="EKa-6u-29m" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="8my-jo-F2T"/>
-                            <constraint firstItem="v7d-PB-im5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="BXq-8Z-QNk"/>
-                            <constraint firstItem="v7d-PB-im5" firstAttribute="top" secondItem="EKa-6u-29m" secondAttribute="bottom" constant="3" id="Cl8-vJ-cHI"/>
+                            <constraint firstItem="oBe-mk-uCd" firstAttribute="top" secondItem="v7d-PB-im5" secondAttribute="bottom" constant="1" id="EXj-Vf-fgH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oBe-mk-uCd" secondAttribute="trailing" constant="-16" id="K9Q-eR-XJF"/>
-                            <constraint firstItem="fZR-NL-kGe" firstAttribute="top" secondItem="oBe-mk-uCd" secondAttribute="bottom" constant="13" id="R6R-jy-T92"/>
+                            <constraint firstItem="v7d-PB-im5" firstAttribute="top" secondItem="EKa-6u-29m" secondAttribute="bottom" id="Ogi-ek-FfR"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fZR-NL-kGe" secondAttribute="bottom" id="VMy-ye-PD0"/>
                             <constraint firstItem="EKa-6u-29m" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="eMO-r3-rVa"/>
-                            <constraint firstItem="fZR-NL-kGe" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="iFJ-ZW-XtF"/>
-                            <constraint firstItem="oBe-mk-uCd" firstAttribute="top" secondItem="v7d-PB-im5" secondAttribute="bottom" constant="5" id="lJq-iM-vuh"/>
+                            <constraint firstItem="v7d-PB-im5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="m0W-1D-geT"/>
                             <constraint firstItem="oBe-mk-uCd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="nA9-q1-hG1"/>
-                            <constraint firstItem="fZR-NL-kGe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="sgL-ta-huT"/>
-                            <constraint firstItem="fZR-NL-kGe" firstAttribute="top" secondItem="oBe-mk-uCd" secondAttribute="bottom" constant="13" id="vgr-f2-XRV"/>
+                            <constraint firstItem="fZR-NL-kGe" firstAttribute="top" secondItem="oBe-mk-uCd" secondAttribute="bottom" id="sO7-jW-VPI"/>
+                            <constraint firstItem="fZR-NL-kGe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="sgL-ta-huT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v7d-PB-im5" secondAttribute="trailing" constant="-16" id="uEk-B0-O1y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fZR-NL-kGe" secondAttribute="trailing" constant="-16" id="y71-qm-kGn"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Yf-I7-so5"/>
+                                <exclude reference="Ogi-ek-FfR"/>
+                                <exclude reference="m0W-1D-geT"/>
+                                <exclude reference="uEk-B0-O1y"/>
+                                <exclude reference="EXj-Vf-fgH"/>
+                                <exclude reference="sO7-jW-VPI"/>
+                                <exclude reference="y71-qm-kGn"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="4Yf-I7-so5"/>
+                                <include reference="Ogi-ek-FfR"/>
+                                <include reference="m0W-1D-geT"/>
+                                <include reference="uEk-B0-O1y"/>
+                                <include reference="EXj-Vf-fgH"/>
+                                <include reference="sO7-jW-VPI"/>
+                                <include reference="y71-qm-kGn"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="balanceListSummary" destination="oBe-mk-uCd" id="A6x-fA-P8F"/>
@@ -78,6 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1246.5" y="385"/>
         </scene>
         <!--Balance List Detail View Controller-->
         <scene sceneID="SdZ-Eo-acj">
@@ -143,12 +195,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mVf-W5-KUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="k6J-1I-rle" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="395"/>
+            <point key="canvasLocation" x="1180.5" y="1294"/>
         </scene>
         <!--Add Balance List Detail View Controller-->
         <scene sceneID="AdT-cx-xvg">
             <objects>
-                <viewController id="Pnm-Oi-5M8" customClass="AddBalanceListDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddBalanceListDetailViewController" id="Pnm-Oi-5M8" customClass="AddBalanceListDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AmN-hU-cUB"/>
                         <viewControllerLayoutGuide type="bottom" id="C0T-Wg-r4d"/>
@@ -321,7 +373,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使い道" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV4-jg-AVA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="入出金の理由" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV4-jg-AVA">
                                         <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -459,6 +511,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="SaveButton" destination="uEF-Ia-HDl" id="b7T-cA-99w"/>
+                        <outlet property="addBalanceNavigationItem" destination="F9i-0f-ESA" id="0Ye-Ru-ksP"/>
                         <outlet property="amountOfMoneyTextField" destination="OkS-ey-ARp" id="9bn-8n-9sL"/>
                         <outlet property="datePicker" destination="9DK-dc-VCd" id="Id4-ra-NZz"/>
                         <outlet property="howToUseTextField" destination="TMX-Bz-9q6" id="Sfu-g6-yfQ"/>
@@ -469,7 +523,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pky-dg-eEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="C8y-LR-thx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="349"/>
+            <point key="canvasLocation" x="2203.5" y="1301"/>
         </scene>
         <!--Add Balance List Modal View Controller-->
         <scene sceneID="Mkz-ck-noG">
@@ -686,7 +740,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TW-Wi-OAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JR1-gh-1UG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2500.5" y="-431"/>
+            <point key="canvasLocation" x="2118" y="391"/>
         </scene>
     </scenes>
 </document>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BalanceListDetailViewController : UIViewController
+@interface BalanceListDetailViewController : UIViewController<UIScrollViewDelegate>
 {
     NSString *tableName;
     int headingHeight;

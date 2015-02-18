@@ -10,6 +10,7 @@
 #import "AddBalanceListDetailViewController.h"
 #import "MoneyTable.h"
 #import "MoneyTableDataManager.h"
+#import "CustomScrollView.h"
 
 static const int kHeadingHeight = 40;
 static const int kGridCellHeight = 50;
@@ -17,9 +18,9 @@ static const int kGridCellHeight = 50;
 @interface BalanceListDetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
-@property (nonatomic) UIScrollView *gridScrollView;
+@property (nonatomic) CustomScrollView *gridScrollView;
 @property (nonatomic) int sumOfBalance;
-
+@property (nonatomic) AddBalanceListDetailViewController *addBalancelistDetailViewController;
 @end
 
 @implementation BalanceListDetailViewController
@@ -36,6 +37,7 @@ static const int kGridCellHeight = 50;
     
     self.navigationBar.topItem.title = tableName;
     
+    self.addBalancelistDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddBalanceListDetailViewController"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,6 +79,32 @@ static const int kGridCellHeight = 50;
         MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
         
         NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
+        
+        if ([AddBalanceListDetailViewController getViewMode] == 1) {
+            NSFetchRequest *request = [[NSFetchRequest alloc] init];
+            
+            // 検索対象のエンティティを指定
+            NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
+            [request setEntity:entityDesc];
+            
+            // 要素を検索
+            NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@) and (date = %@) and (reason = %@) and (amountOfMoney = %@)", addBalanceListDetailViewController.editMoneyTableObject.name, addBalanceListDetailViewController.editMoneyTableObject.date, addBalanceListDetailViewController.editMoneyTableObject.reason, addBalanceListDetailViewController.editMoneyTableObject.amountOfMoney];
+            [request setPredicate:pred];
+            
+            NSError *error;
+            NSArray *moneyTableArray = [managedObjectContext executeFetchRequest:request error:&error];
+            
+            for (NSManagedObject *object in moneyTableArray) {
+                [managedObjectContext deleteObject:object];
+            }
+            
+            NSString *logMessage = [[NSString alloc]init];
+            if (![managedObjectContext save:&error]) {
+                logMessage = @"faled to delete objects";
+            } else {
+                logMessage = @"successed to delete objects";
+            }
+        }
         
         // NSEntityDescriptionのinsertNewObjectForEntityForName:を利用して、
         // NSManagedObjetのインスタンスを取得
@@ -123,6 +151,7 @@ static const int kGridCellHeight = 50;
     
     NSError *error;
     NSArray *objects = [managedObjectContext executeFetchRequest:request error:&error];
+    
     return objects;
 }
 
@@ -180,7 +209,7 @@ static const int kGridCellHeight = 50;
     [self.view addSubview:labelAmountOfMoney];
     [self.view addSubview:labelAmountOfBalance];
     
-    self.gridScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, tableHeading_y_coodinate+kHeadingHeight, mainScreenFrame.size.width, mainScreenFrame.size.height - navigationBarFrame.size.height - statusFrame.size.height - kHeadingHeight)];
+    self.gridScrollView = [[CustomScrollView alloc] initWithFrame:CGRectMake(0, tableHeading_y_coodinate+kHeadingHeight, mainScreenFrame.size.width, mainScreenFrame.size.height - navigationBarFrame.size.height - statusFrame.size.height - kHeadingHeight)];
     
     self.gridScrollView.scrollEnabled = YES;
     self.gridScrollView.contentSize = CGSizeMake(mainScreenFrame.size.width, kGridCellHeight*lineNumber);
@@ -201,6 +230,7 @@ static const int kGridCellHeight = 50;
     cellDate.textAlignment = NSTextAlignmentCenter;
     cellDate.layer.borderColor = [UIColor grayColor].CGColor;
     cellDate.layer.borderWidth = 1.0;
+    cellDate.backgroundColor = [UIColor colorWithRed:0.88f green:0.90f blue:0.99f alpha:1];
     
     UILabel *cellReason = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width/4,kGridCellHeight*lineNumber,mainScreenFrame.size.width/4,kGridCellHeight)];
     cellReason.text = moneyTableObject.reason;
@@ -208,6 +238,7 @@ static const int kGridCellHeight = 50;
     cellReason.textAlignment = NSTextAlignmentCenter;
     cellReason.layer.borderColor = [UIColor grayColor].CGColor;
     cellReason.layer.borderWidth = 1.0;
+    cellReason.backgroundColor = [UIColor colorWithRed:0.88f green:0.90f blue:0.99f alpha:1];
     
     UILabel *cellAmountOfMoney = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width/2,kGridCellHeight*lineNumber,mainScreenFrame.size.width/4,kGridCellHeight)];
     cellAmountOfMoney.text = moneyTableObject.amountOfMoney.stringValue;
@@ -217,28 +248,141 @@ static const int kGridCellHeight = 50;
     } else if (moneyTableObject.amountOfMoney.intValue < 0) {
         cellAmountOfMoney.textColor = [UIColor redColor];
     }
-    
     cellAmountOfMoney.textAlignment = NSTextAlignmentCenter;
     cellAmountOfMoney.layer.borderColor = [UIColor grayColor].CGColor;
     cellAmountOfMoney.layer.borderWidth = 1.0;
+    cellAmountOfMoney.backgroundColor = [UIColor colorWithRed:0.88f green:0.90f blue:0.99f alpha:1];
     
     UILabel *cellAmountOfBalance = [[UILabel alloc] initWithFrame:CGRectMake(mainScreenFrame.size.width*3/4,kGridCellHeight*lineNumber,mainScreenFrame.size.width/4,kGridCellHeight)];
     cellAmountOfBalance.text = [NSString stringWithFormat:@"%d", amountOfBalance];
-    
     if (amountOfBalance > 0) {
         cellAmountOfBalance.textColor = [UIColor blueColor];
     } else if (amountOfBalance < 0) {
         cellAmountOfBalance.textColor = [UIColor redColor];
     }
-    
     cellAmountOfBalance.textAlignment = NSTextAlignmentCenter;
     cellAmountOfBalance.layer.borderColor = [UIColor grayColor].CGColor;
     cellAmountOfBalance.layer.borderWidth = 1.0;
+    cellAmountOfBalance.backgroundColor =[UIColor colorWithRed:0.88f green:0.90f blue:0.99f alpha:1];
     
     [self.gridScrollView addSubview:cellDate];
     [self.gridScrollView addSubview:cellReason];
     [self.gridScrollView addSubview:cellAmountOfMoney];
     [self.gridScrollView addSubview:cellAmountOfBalance];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGFloat x,y;
+    NSArray* objects=[touches allObjects];
+    
+    for (int i=0 ; i<objects.count ; i++) {
+        CGPoint location = [[objects objectAtIndex:i] locationInView:self.gridScrollView];
+        x = location.x; // X座標
+        y = location.y; // Y座標
+        NSLog(@"x : %f", x);
+        NSLog(@"y : %f", y);
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGFloat x,y;
+    NSArray* objects=[touches allObjects];
+    
+    for (int i=0 ; i<objects.count ; i++) {
+        CGPoint location = [[objects objectAtIndex:i] locationInView:self.gridScrollView];
+        x = location.x; // X座標
+        y = location.y; // Y座標
+        NSLog(@"x end : %f", x);
+        NSLog(@"y end : %f", y);
+        
+        if (y > 0) {
+            
+            int lineNumber;
+            lineNumber = y / kGridCellHeight;
+            NSArray *moneyTableObjects;
+            moneyTableObjects = [self fetchRequest];
+            moneyTableObjects = [self sortMoneyTable:moneyTableObjects];
+            MoneyTable *moneyTable = [moneyTableObjects objectAtIndex:lineNumber];
+            
+            NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"YYYY-MM-dd"];
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"この記録の操作を選択してください" message:[NSString stringWithFormat:@"日付 : %@\n使い道 : %@\n金額 : %@", [dateFormatter stringFromDate:moneyTable.date], moneyTable.reason, [moneyTable.amountOfMoney stringValue]] preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"編集する" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+                [AddBalanceListDetailViewController setViewMode:1];
+                [self presentViewController:self.addBalancelistDetailViewController animated:YES completion:nil];
+                [self.addBalancelistDetailViewController.datePicker setDate:moneyTable.date];
+                [self.addBalancelistDetailViewController.howToUseTextField setText:moneyTable.reason];
+                NSNumber *amountOfMoney = moneyTable.amountOfMoney;
+                if ([amountOfMoney intValue] < 0) {
+                    [self.addBalancelistDetailViewController.isIncomeOrOutgoSegmentedControl setSelectedSegmentIndex:0];
+                } else {
+                    [self.addBalancelistDetailViewController.isIncomeOrOutgoSegmentedControl setSelectedSegmentIndex:1];
+                }
+                int amountOfMoneyInt = abs([amountOfMoney intValue]);
+                NSString *amountOfMoneyString = [NSString stringWithFormat:@"%d", amountOfMoneyInt];
+                [self.addBalancelistDetailViewController.amountOfMoneyTextField setText:amountOfMoneyString];
+                self.addBalancelistDetailViewController.editMoneyTableObject = moneyTable;
+                
+            }]];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"削除する" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                
+                MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
+                NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
+                
+                NSFetchRequest *request = [[NSFetchRequest alloc] init];
+                
+                // 検索対象のエンティティを指定
+                NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
+                [request setEntity:entityDesc];
+                
+                // 要素を検索
+                NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@) and (date = %@) and (reason = %@) and (amountOfMoney = %@)", moneyTable.name, moneyTable.date, moneyTable.reason, moneyTable.amountOfMoney];
+                [request setPredicate:pred];
+                
+                NSError *error;
+                NSArray *moneyTableArray = [managedObjectContext executeFetchRequest:request error:&error];
+                
+                for (NSManagedObject *object in moneyTableArray) {
+                    [managedObjectContext deleteObject:object];
+                }
+                
+                NSString *logMessage = [[NSString alloc]init];
+                if (![managedObjectContext save:&error]) {
+                    logMessage = @"faled to delete objects";
+                } else {
+                    logMessage = @"successed to delete objects";
+                }
+                
+                [self.gridScrollView removeFromSuperview];
+                
+                NSArray *moneyTableObjects;
+                moneyTableObjects = [self fetchRequest];
+                
+                [self createDetailGridTableHeadingAndGridScrollview:[moneyTableObjects count]];
+                
+                self.sumOfBalance = 0;
+                
+                NSArray *sortedMoneyTableObjects = [self sortMoneyTable:moneyTableObjects];
+                
+                for (int i = 0; i < [sortedMoneyTableObjects count]; i++) {
+                    MoneyTable *moneyTable = [sortedMoneyTableObjects objectAtIndex:i];
+                    self.sumOfBalance = self.sumOfBalance + [moneyTable.amountOfMoney intValue];
+                    
+                    [self createDetailGridCell:moneyTable lineNumber:i amountOfBalance:self.sumOfBalance];
+                }
+                
+            }]];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"キャンセル" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            }]];
+            
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+    }
 }
 
 @end

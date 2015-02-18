@@ -36,12 +36,14 @@
     
     self.balanceListSummary.delegate = self;
     self.balanceListSummary.dataSource = self;
+    
+    self.balanceListSummary.backgroundColor = [UIColor colorWithRed:0.88f green:0.90f blue:0.99f alpha:1];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     balanceLists = [self createMoneyTableArrray];
-    self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計:%@ 円",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
+    self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計 : %@ 円   ",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
     
     [self.balanceListSummary reloadData];
 }
@@ -68,6 +70,8 @@
     cell.textLabel.text = balanceLists[indexPath.row];
     NSString *detailText = [NSString stringWithFormat:@"残高:%@ 円",[[NSString alloc] initWithFormat:@"%d", [self searchMoneyTableAndReturnSum:balanceLists[indexPath.row]]]];
     cell.detailTextLabel.text = detailText;
+    
+    cell.backgroundColor = [UIColor colorWithRed:0.88f green:0.90f blue:0.99f alpha:1];
     
     return cell;
 }
