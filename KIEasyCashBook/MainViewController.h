@@ -12,9 +12,11 @@
 {
     NSString *tableName;
     int entireFortune;
+    bool isListZeroMode;
 }
 @property NSString *tableName;
 @property int entireFortune;
+@property bool isListZeroMode;
 
 @end
 

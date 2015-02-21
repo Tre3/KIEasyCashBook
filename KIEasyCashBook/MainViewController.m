@@ -25,6 +25,7 @@
 @implementation MainViewController
 @synthesize tableName;
 @synthesize entireFortune;
+@synthesize isListZeroMode;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,7 +44,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     balanceLists = [self createMoneyTableArrray];
-    self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計 : %@ 円   ",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
+    self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計 : %@ 円",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
     
     [self.balanceListSummary reloadData];
 }
@@ -67,9 +68,17 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
+    if (isListZeroMode) {
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:15.f];
+        cell.textLabel.minimumScaleFactor = 10.f/15.f;
+        cell.textLabel.adjustsFontSizeToFitWidth = YES;
+        cell.textLabel.textColor = [UIColor colorWithRed:0.40f green:0.40f blue:0.40f alpha:1];
+    } else {
+        NSString *detailText = [NSString stringWithFormat:@"残高:%@ 円",[[NSString alloc] initWithFormat:@"%d", [self searchMoneyTableAndReturnSum:balanceLists[indexPath.row]]]];
+        cell.detailTextLabel.text = detailText;
+    }
+    
     cell.textLabel.text = balanceLists[indexPath.row];
-    NSString *detailText = [NSString stringWithFormat:@"残高:%@ 円",[[NSString alloc] initWithFormat:@"%d", [self searchMoneyTableAndReturnSum:balanceLists[indexPath.row]]]];
-    cell.detailTextLabel.text = detailText;
     
     cell.backgroundColor = [UIColor colorWithRed:0.88f green:0.90f blue:0.99f alpha:1];
     
@@ -79,7 +88,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath*) indexPath{
     tableName = balanceLists[indexPath.row];
     
-    [self performSegueWithIdentifier:@"toBalanceListDetailSegue" sender:self];
+    if (!isListZeroMode) {
+        [self performSegueWithIdentifier:@"toBalanceListDetailSegue" sender:self];
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 // 画面遷移前に次画面にパラメータを渡す
@@ -121,7 +134,13 @@
         [balanceLists removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         balanceLists = [self createMoneyTableArrray];
+        [self.balanceListSummary reloadData];
         self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計:%@ 円",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
+        
+        if (isListZeroMode) {
+            [self.balanceListSummary setEditing:NO animated:YES];
+            self.tableEditButton.title = @"編集";
+        }
     }
 }
 
@@ -216,6 +235,13 @@
     }
     
     entireFortune = entireFortuneTemp;
+    if ([moneyTableMutableArray count] == 0) {
+        isListZeroMode = true;
+        
+        [moneyTableMutableArray addObject:@"右上の「 + 」ボタンでリストを追加してください"];
+    } else {
+        isListZeroMode = false;
+    }
     
     return moneyTableMutableArray;
 }
