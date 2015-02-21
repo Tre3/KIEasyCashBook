@@ -209,12 +209,21 @@ static const int kGridCellHeight = 50;
     [self.view addSubview:labelAmountOfMoney];
     [self.view addSubview:labelAmountOfBalance];
     
-    self.gridScrollView = [[CustomScrollView alloc] initWithFrame:CGRectMake(0, tableHeading_y_coodinate+kHeadingHeight, mainScreenFrame.size.width, mainScreenFrame.size.height - navigationBarFrame.size.height - statusFrame.size.height - kHeadingHeight)];
+    self.gridScrollView = [[CustomScrollView alloc] initWithFrame:CGRectMake(0, tableHeading_y_coodinate+kHeadingHeight, mainScreenFrame.size.width, mainScreenFrame.size.height - navigationBarFrame.size.height - statusFrame.size.height - (kHeadingHeight * 2))];
     
     self.gridScrollView.scrollEnabled = YES;
     self.gridScrollView.contentSize = CGSizeMake(mainScreenFrame.size.width, kGridCellHeight*lineNumber);
     
     [self.view addSubview:self.gridScrollView];
+    
+    UILabel *navigationMessage = [[UILabel alloc] initWithFrame:CGRectMake(0,mainScreenFrame.size.height - kHeadingHeight,mainScreenFrame.size.width,kHeadingHeight)];
+    navigationMessage.text = @"リストをタップで編集・削除できます";
+    navigationMessage.textAlignment = NSTextAlignmentCenter;
+    navigationMessage.layer.borderColor = [UIColor grayColor].CGColor;
+    navigationMessage.layer.borderWidth = 1.0;
+    navigationMessage.backgroundColor = [UIColor lightGrayColor];
+    
+    [self.view addSubview:navigationMessage];
 }
 
 -(void)createDetailGridCell:(MoneyTable*)moneyTableObject lineNumber:(int)lineNumber amountOfBalance:(int)amountOfBalance
