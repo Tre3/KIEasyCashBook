@@ -343,46 +343,62 @@ static const int kGridCellHeight = 50;
                 MoneyTableDataManager *moneyTableDataManager = [MoneyTableDataManager sharedMoneyTableManager];
                 NSManagedObjectContext *managedObjectContext = [moneyTableDataManager managedObjectContext];
                 
+                NSFetchRequest *preRequest = [[NSFetchRequest alloc] init];
+                
                 NSFetchRequest *request = [[NSFetchRequest alloc] init];
                 
                 // 検索対象のエンティティを指定
                 NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"MoneyTable" inManagedObjectContext:managedObjectContext];
-                [request setEntity:entityDesc];
                 
-                // 要素を検索
-                NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@) and (date = %@) and (reason = %@) and (amountOfMoney = %@)", moneyTable.name, moneyTable.date, moneyTable.reason, moneyTable.amountOfMoney];
-                [request setPredicate:pred];
-                
-                NSError *error;
-                NSArray *moneyTableArray = [managedObjectContext executeFetchRequest:request error:&error];
-                
-                for (NSManagedObject *object in moneyTableArray) {
-                    [managedObjectContext deleteObject:object];
-                }
-                
-                NSString *logMessage = [[NSString alloc]init];
-                if (![managedObjectContext save:&error]) {
-                    logMessage = @"faled to delete objects";
-                } else {
-                    logMessage = @"successed to delete objects";
-                }
-                
-                [self.gridScrollView removeFromSuperview];
-                
-                NSArray *moneyTableObjects;
-                moneyTableObjects = [self fetchRequest];
-                
-                [self createDetailGridTableHeadingAndGridScrollview:[moneyTableObjects count]];
-                
-                self.sumOfBalance = 0;
-                
-                NSArray *sortedMoneyTableObjects = [self sortMoneyTable:moneyTableObjects];
-                
-                for (int i = 0; i < [sortedMoneyTableObjects count]; i++) {
-                    MoneyTable *moneyTable = [sortedMoneyTableObjects objectAtIndex:i];
-                    self.sumOfBalance = self.sumOfBalance + [moneyTable.amountOfMoney intValue];
+                [preRequest setEntity:entityDesc];
+                NSPredicate *prePred = [NSPredicate predicateWithFormat:@"name = %@", moneyTable.name];
+                [preRequest setPredicate:prePred];
+                NSError *preError;
+                NSArray *preMoneyTableArray = [managedObjectContext executeFetchRequest:preRequest error:&preError];
+                if ([preMoneyTableArray count] == 1) {
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"リストが空になるため削除できません" message:@"" preferredStyle:UIAlertControllerStyleAlert];[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    }]];
                     
-                    [self createDetailGridCell:moneyTable lineNumber:i amountOfBalance:self.sumOfBalance];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                } else {
+                
+                    [request setEntity:entityDesc];
+                
+                    // 要素を検索
+                    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(name = %@) and (date = %@) and (reason = %@) and (amountOfMoney = %@)", moneyTable.name, moneyTable.date, moneyTable.reason, moneyTable.amountOfMoney];
+                    [request setPredicate:pred];
+                
+                    NSError *error;
+                    NSArray *moneyTableArray = [managedObjectContext executeFetchRequest:request error:&error];
+                
+                    for (NSManagedObject *object in moneyTableArray) {
+                        [managedObjectContext deleteObject:object];
+                    }
+                
+                    NSString *logMessage = [[NSString alloc]init];
+                    if (![managedObjectContext save:&error]) {
+                        logMessage = @"faled to delete objects";
+                    } else {
+                        logMessage = @"successed to delete objects";
+                    }
+                
+                    [self.gridScrollView removeFromSuperview];
+                
+                    NSArray *moneyTableObjects;
+                    moneyTableObjects = [self fetchRequest];
+                
+                    [self createDetailGridTableHeadingAndGridScrollview:[moneyTableObjects count]];
+                
+                    self.sumOfBalance = 0;
+                
+                    NSArray *sortedMoneyTableObjects = [self sortMoneyTable:moneyTableObjects];
+                
+                    for (int i = 0; i < [sortedMoneyTableObjects count]; i++) {
+                        MoneyTable *moneyTable = [sortedMoneyTableObjects objectAtIndex:i];
+                        self.sumOfBalance = self.sumOfBalance + [moneyTable.amountOfMoney intValue];
+                    
+                        [self createDetailGridCell:moneyTable lineNumber:i amountOfBalance:self.sumOfBalance];
+                    }
                 }
                 
             }]];
