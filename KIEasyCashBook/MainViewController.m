@@ -89,6 +89,7 @@
         cell.detailTextLabel.text = detailText;
     } else {
         NSString *detailText = [NSString stringWithFormat:@"残高:%@ 円",[[NSString alloc] initWithFormat:@"%d", [self searchMoneyTableAndReturnSum:balanceLists[indexPath.row]]]];
+        cell.textLabel.font = [UIFont systemFontOfSize:18.0f];
         cell.detailTextLabel.text = detailText;
         cell.textLabel.textColor = [UIColor blackColor];
     }
