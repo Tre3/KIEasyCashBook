@@ -85,9 +85,12 @@
         cell.textLabel.minimumScaleFactor = 10.f/15.f;
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.textLabel.textColor = [UIColor colorWithRed:0.40f green:0.40f blue:0.40f alpha:1];
+        NSString *detailText = [[NSString alloc] init];
+        cell.detailTextLabel.text = detailText;
     } else {
         NSString *detailText = [NSString stringWithFormat:@"残高:%@ 円",[[NSString alloc] initWithFormat:@"%d", [self searchMoneyTableAndReturnSum:balanceLists[indexPath.row]]]];
         cell.detailTextLabel.text = detailText;
+        cell.textLabel.textColor = [UIColor blackColor];
     }
     
     cell.textLabel.text = balanceLists[indexPath.row];
