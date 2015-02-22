@@ -1,0 +1,63 @@
+
+/* Class = "IBUIBarButtonItem"; title = "保存"; ObjectID = "Bsl-MP-P5X"; */
+"Bsl-MP-P5X.title" = "保存";
+
+/* Class = "IBUINavigationItem"; title = "新規入出金"; ObjectID = "F9i-0f-ESA"; */
+"F9i-0f-ESA.title" = "新規入出金";
+
+/* Class = "IBUILabel"; text = "円"; ObjectID = "Fdl-cY-jFQ"; */
+"Fdl-cY-jFQ.text" = "円";
+
+/* Class = "IBUISegmentedControl"; Fi5-av-H2V.segmentTitles[0] = "支出"; ObjectID = "Fi5-av-H2V"; */
+"Fi5-av-H2V.segmentTitles[0]" = "支出";
+
+/* Class = "IBUISegmentedControl"; Fi5-av-H2V.segmentTitles[1] = "収入"; ObjectID = "Fi5-av-H2V"; */
+"Fi5-av-H2V.segmentTitles[1]" = "収入";
+
+/* Class = "IBUILabel"; text = "円"; ObjectID = "Lnd-pl-smg"; */
+"Lnd-pl-smg.text" = "円";
+
+/* Class = "IBUILabel"; text = "金額"; ObjectID = "QbS-5G-LDC"; */
+"QbS-5G-LDC.text" = "金額";
+
+/* Class = "IBUINavigationItem"; title = "お財布"; ObjectID = "Zkh-dP-dbS"; */
+"Zkh-dP-dbS.title" = "お財布";
+
+/* Class = "IBUILabel"; text = "新規追加したい家計簿名"; ObjectID = "ci4-PS-FdD"; */
+"ci4-PS-FdD.text" = "新規追加したい家計簿名";
+
+/* Class = "IBUINavigationItem"; title = "新規追加"; ObjectID = "eMu-g3-DIG"; */
+"eMu-g3-DIG.title" = "新規追加";
+
+/* Class = "IBUILabel"; text = "残高合計：３０００円"; ObjectID = "fZR-NL-kGe"; */
+"fZR-NL-kGe.text" = "残高合計：３０００円";
+
+/* Class = "IBUILabel"; text = "初期金額"; ObjectID = "kkr-Ll-kHW"; */
+"kkr-Ll-kHW.text" = "初期金額";
+
+/* Class = "IBUILabel"; text = "日付"; ObjectID = "lsU-am-GAY"; */
+"lsU-am-GAY.text" = "日付";
+
+/* Class = "IBUIBarButtonItem"; title = "編集"; ObjectID = "lte-WR-Lp4"; */
+"lte-WR-Lp4.title" = "編集";
+
+/* Class = "IBUIBarButtonItem"; title = "キャンセル"; ObjectID = "mb0-em-bFt"; */
+"mb0-em-bFt.title" = "キャンセル";
+
+/* Class = "IBUINavigationItem"; title = "カンタン家計簿"; ObjectID = "pzu-jm-3Wc"; */
+"pzu-jm-3Wc.title" = "カンタン家計簿";
+
+/* Class = "IBUIBarButtonItem"; title = "キャンセル"; ObjectID = "tEs-Ii-Sb4"; */
+"tEs-Ii-Sb4.title" = "キャンセル";
+
+/* Class = "IBUIBarButtonItem"; title = "保存"; ObjectID = "uEF-Ia-HDl"; */
+"uEF-Ia-HDl.title" = "保存";
+
+/* Class = "IBUIBarButtonItem"; title = "戻る"; ObjectID = "ufm-5b-79l"; */
+"ufm-5b-79l.title" = "戻る";
+
+/* Class = "IBUILabel"; text = "   家計簿一覧"; ObjectID = "v7d-PB-im5"; */
+"v7d-PB-im5.text" = "   家計簿一覧";
+
+/* Class = "IBUILabel"; text = "入出金の理由"; ObjectID = "vV4-jg-AVA"; */
+"vV4-jg-AVA.text" = "入出金の理由";

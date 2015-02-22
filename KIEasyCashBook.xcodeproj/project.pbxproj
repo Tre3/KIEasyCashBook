@@ -56,6 +56,8 @@
 		F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBalanceListDetailViewController.m; sourceTree = "<group>"; };
 		F2AE065B1A8CE5A10041653B /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
 		F2AE065C1A8CE5A10041653B /* CustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
+		F2AE065E1A998EFB0041653B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		F2AE065F1A998EFB0041653B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F2AE272D1A6C0C7F00772D08 /* MoneyTableDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTableDataManager.h; sourceTree = "<group>"; };
 		F2AE272E1A6C0C7F00772D08 /* MoneyTableDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTableDataManager.m; sourceTree = "<group>"; };
 		F2B382451A6BB5E700EE9618 /* MoneyTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTable.h; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F2341A571A5EA62500DCD144 /* Base */,
+				F2AE065E1A998EFB0041653B /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				F2341A5C1A5EA62500DCD144 /* Base */,
+				F2AE065F1A998EFB0041653B /* ja */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -383,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = KIEasyCashBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = KIEasyCashBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

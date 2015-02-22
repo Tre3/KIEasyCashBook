@@ -13,10 +13,11 @@
     NSString *tableName;
     int entireFortune;
     bool isListZeroMode;
+    bool isAddFailed;
 }
 @property NSString *tableName;
 @property int entireFortune;
 @property bool isListZeroMode;
-
+@property bool isAddFailed;
 @end
 

@@ -26,6 +26,7 @@
 @synthesize tableName;
 @synthesize entireFortune;
 @synthesize isListZeroMode;
+@synthesize isAddFailed;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +48,17 @@
     self.entireFortuneLabel.text = [NSString stringWithFormat:@"残高合計 : %@ 円",[[NSString alloc] initWithFormat:@"%d", entireFortune]];
     
     [self.balanceListSummary reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (isAddFailed) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"家計簿名と初期金額を入力しないと追加できません" message:@"" preferredStyle:UIAlertControllerStyleAlert];[alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        }]];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    isAddFailed = false;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -165,6 +177,7 @@
         } else {
             // Todo
             // アラートの表示（ここで可能か？）
+            isAddFailed = true;
         }
     }
 }
