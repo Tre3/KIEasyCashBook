@@ -433,7 +433,7 @@
                                     <constraint firstItem="9DK-dc-VCd" firstAttribute="top" secondItem="lsU-am-GAY" secondAttribute="bottom" id="TmX-HO-Ah4"/>
                                     <constraint firstItem="lsU-am-GAY" firstAttribute="leading" secondItem="ncx-A7-MSc" secondAttribute="leading" constant="8" id="UWc-OX-rrE"/>
                                     <constraint firstItem="Lnd-pl-smg" firstAttribute="top" secondItem="TMX-Bz-9q6" secondAttribute="bottom" constant="24" id="aEB-Mh-n9I"/>
-                                    <constraint firstItem="9DK-dc-VCd" firstAttribute="leading" secondItem="ncx-A7-MSc" secondAttribute="leading" id="cZs-gP-ltD"/>
+                                    <constraint firstItem="9DK-dc-VCd" firstAttribute="leading" secondItem="ncx-A7-MSc" secondAttribute="leading" constant="4" id="cZs-gP-ltD"/>
                                     <constraint firstAttribute="bottom" secondItem="QbS-5G-LDC" secondAttribute="bottom" constant="450" id="eVU-Wt-yGN"/>
                                     <constraint firstAttribute="trailing" secondItem="9DK-dc-VCd" secondAttribute="trailing" id="lBy-pf-n6N"/>
                                     <constraint firstItem="Lnd-pl-smg" firstAttribute="leading" secondItem="OkS-ey-ARp" secondAttribute="trailing" constant="8" id="nmm-Vy-Vcf"/>
@@ -514,8 +514,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="az5-pP-YIf" secondAttribute="trailing" constant="-20" id="9qa-nz-V5T"/>
                             <constraint firstItem="az5-pP-YIf" firstAttribute="leading" secondItem="OL0-8z-Qn3" secondAttribute="leadingMargin" constant="-20" id="E8e-if-KBY"/>
                             <constraint firstItem="ncx-A7-MSc" firstAttribute="top" secondItem="az5-pP-YIf" secondAttribute="bottom" id="KuB-Dx-6IL"/>
-                            <constraint firstItem="ncx-A7-MSc" firstAttribute="leading" secondItem="OL0-8z-Qn3" secondAttribute="leadingMargin" constant="-16" id="XEe-1a-KfM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ncx-A7-MSc" secondAttribute="trailing" constant="-16" id="elr-G6-XZr"/>
+                            <constraint firstItem="ncx-A7-MSc" firstAttribute="leading" secondItem="OL0-8z-Qn3" secondAttribute="leadingMargin" constant="-20" id="XEe-1a-KfM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ncx-A7-MSc" secondAttribute="trailing" constant="-20" id="elr-G6-XZr"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ncx-A7-MSc" secondAttribute="bottom" constant="-214" id="yCP-cX-xPV"/>
                         </constraints>
                         <variation key="default">
