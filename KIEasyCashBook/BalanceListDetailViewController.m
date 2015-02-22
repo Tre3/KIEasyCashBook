@@ -313,6 +313,8 @@ static const int kGridCellHeight = 50;
             NSArray *moneyTableObjects;
             moneyTableObjects = [self fetchRequest];
             moneyTableObjects = [self sortMoneyTable:moneyTableObjects];
+            if ([moneyTableObjects count] >= lineNumber + 1) {
+                
             MoneyTable *moneyTable = [moneyTableObjects objectAtIndex:lineNumber];
             
             NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
@@ -406,6 +408,7 @@ static const int kGridCellHeight = 50;
             }]];
             
             [self presentViewController:alertController animated:YES completion:nil];
+            }
         }
     }
 }
