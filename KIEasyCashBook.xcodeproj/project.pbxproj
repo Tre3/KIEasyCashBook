@@ -103,27 +103,12 @@
 		F2341A481A5EA62500DCD144 /* KIEasyCashBook */ = {
 			isa = PBXGroup;
 			children = (
+				F2BB20F41AC1A82000765D10 /* Resources */,
+				F2BB20F21AC1A7A500765D10 /* Database */,
+				F2BB20EF1AC1A75700765D10 /* Views */,
 				F2341A4D1A5EA62500DCD144 /* AppDelegate.h */,
 				F2341A4E1A5EA62500DCD144 /* AppDelegate.m */,
-				F2341A531A5EA62500DCD144 /* MainViewController.h */,
-				F2341A541A5EA62500DCD144 /* MainViewController.m */,
-				F2341A721A5EE9B300DCD144 /* AddBalanceListModalViewController.h */,
-				F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */,
-				F2341A751A5EEBEB00DCD144 /* BalanceListDetailViewController.h */,
-				F2341A761A5EEBEB00DCD144 /* BalanceListDetailViewController.m */,
-				F2AE065B1A8CE5A10041653B /* CustomScrollView.h */,
-				F2AE065C1A8CE5A10041653B /* CustomScrollView.m */,
-				F2341A781A5EF3D200DCD144 /* AddBalanceListDetailViewController.h */,
-				F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */,
-				F2341A561A5EA62500DCD144 /* Main.storyboard */,
-				F2341A591A5EA62500DCD144 /* Images.xcassets */,
-				F2341A5B1A5EA62500DCD144 /* LaunchScreen.xib */,
-				F2341A501A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld */,
-				F2B382451A6BB5E700EE9618 /* MoneyTable.h */,
-				F2B382461A6BB5E700EE9618 /* MoneyTable.m */,
 				F2341A491A5EA62500DCD144 /* Supporting Files */,
-				F2AE272D1A6C0C7F00772D08 /* MoneyTableDataManager.h */,
-				F2AE272E1A6C0C7F00772D08 /* MoneyTableDataManager.m */,
 			);
 			path = KIEasyCashBook;
 			sourceTree = "<group>";
@@ -152,6 +137,69 @@
 				F2341A671A5EA62500DCD144 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2BB20EF1AC1A75700765D10 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB20F11AC1A78600765D10 /* CustomView */,
+				F2BB20F01AC1A76E00765D10 /* Controller */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F2BB20F01AC1A76E00765D10 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A531A5EA62500DCD144 /* MainViewController.h */,
+				F2341A541A5EA62500DCD144 /* MainViewController.m */,
+				F2341A721A5EE9B300DCD144 /* AddBalanceListModalViewController.h */,
+				F2341A731A5EE9B300DCD144 /* AddBalanceListModalViewController.m */,
+				F2341A751A5EEBEB00DCD144 /* BalanceListDetailViewController.h */,
+				F2341A761A5EEBEB00DCD144 /* BalanceListDetailViewController.m */,
+				F2341A781A5EF3D200DCD144 /* AddBalanceListDetailViewController.h */,
+				F2341A791A5EF3D200DCD144 /* AddBalanceListDetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F2BB20F11AC1A78600765D10 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F2AE065B1A8CE5A10041653B /* CustomScrollView.h */,
+				F2AE065C1A8CE5A10041653B /* CustomScrollView.m */,
+			);
+			name = CustomView;
+			sourceTree = "<group>";
+		};
+		F2BB20F21AC1A7A500765D10 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F2BB20F31AC1A7F700765D10 /* Models */,
+				F2AE272D1A6C0C7F00772D08 /* MoneyTableDataManager.h */,
+				F2AE272E1A6C0C7F00772D08 /* MoneyTableDataManager.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		F2BB20F31AC1A7F700765D10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A501A5EA62500DCD144 /* KIEasyCashBook.xcdatamodeld */,
+				F2B382451A6BB5E700EE9618 /* MoneyTable.h */,
+				F2B382461A6BB5E700EE9618 /* MoneyTable.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F2BB20F41AC1A82000765D10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2341A561A5EA62500DCD144 /* Main.storyboard */,
+				F2341A591A5EA62500DCD144 /* Images.xcassets */,
+				F2341A5B1A5EA62500DCD144 /* LaunchScreen.xib */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
